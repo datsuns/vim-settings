@@ -42,6 +42,9 @@ highlight Conditional       ctermfg=blue			cterm=NONE
 "========= RST ============
 highlight rstSections ctermfg=cyan	cterm=bold
 
+"========= ruby ============
+highlight rubyConstant ctermfg=yellow	cterm=bold
+
 " only for vim 5
 if has("unix")
   if v:version<600
