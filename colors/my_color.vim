@@ -37,6 +37,7 @@ highlight StatusLine ctermfg=blue	ctermbg=white
 highlight Statement  ctermfg=Yellow			cterm=NONE
 highlight Type       ctermfg=blue			cterm=NONE
 highlight Conditional       ctermfg=blue			cterm=NONE
+highlight Title      ctermfg=blue			cterm=bold
 
 
 "========= RST ============

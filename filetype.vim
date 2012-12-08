@@ -12,3 +12,8 @@ let my_did_load_filetypes = 1
 " Groovy
 au BufNewFile,BufRead *.groovy,*.gradle			setf groovy
 
+" Arduiono
+au BufNewFile,BufRead *.ino			setf arduino
+
+" changelog
+au BufNewFile,BufRead *.changelog   setf changelog

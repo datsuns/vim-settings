@@ -1,7 +1,3 @@
-augroup MyRSpec
-	autocmd!
-	autocmd BufWinEnter,BufNewFile *_spec.rb set filetype=ruby.rspec
-augroup END
 
 source ~/.vim/settings.vim
 source ~/.vim/map.vim

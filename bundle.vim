@@ -11,5 +11,8 @@ Bundle 'Markdown'
 Bundle 'fakeclip'
 Bundle 'Markdown'
 Bundle 'open-browser.vim'
+Bundle 'Arduino-syntax-file'
+Bundle 'TwitVim'
+Bundle 'unite.vim'
 
  filetype plugin indent on     " required!
