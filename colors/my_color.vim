@@ -17,27 +17,53 @@ let g:colors_name = "torte"
 
 " GUI
 highlight Normal     guifg=white	guibg=Black
-highlight Search     guifg=Black	guibg=Red	gui=bold
-highlight Visual     guifg=#404040			gui=bold
+highlight Search     guifg=white	guibg=blue	gui=bold
+highlight Visual					gui=reverse
 highlight Cursor     guifg=Black	guibg=Green	gui=bold
 highlight Special    guifg=Orange
-highlight Comment    guifg=#80a0ff
+highlight Comment    guifg=green	gui=bold
 highlight StatusLine guifg=blue		guibg=white
 highlight Statement  guifg=Yellow			gui=NONE
-highlight Type						gui=NONE
+highlight Type			guifg=DodgerBlue gui=bold
+highlight Conditional	guifg=DodgerBlue gui=bold
+highlight Statement	guifg=DodgerBlue gui=bold
+highlight Repeat		guifg=DodgerBlue gui=bold
+highlight Operator		guifg=DodgerBlue gui=bold
+highlight Label			guifg=DodgerBlue gui=bold
+highlight StorageClass guifg=cyan gui=bold
+highlight Structure	guifg=cyan gui=bold
+highlight String		guifg=red
+highlight Character		guifg=red
+highlight PreProc		guifg=cyan gui=bold
+highlight Number		guifg=lightred
+highlight WarningMsg	guifg=red
 
 " Console
 highlight Normal     ctermfg=white		ctermbg=Black
-highlight Search     ctermfg=white	ctermbg=Blue	cterm=NONE
+highlight Search     ctermfg=white	ctermbg=blue	cterm=bold
 highlight Visual					cterm=reverse
 highlight Cursor     ctermfg=Black	ctermbg=Green	cterm=bold
-highlight Special    ctermfg=Brown
+highlight Special    ctermfg=magenta
 highlight Comment    ctermfg=green      cterm=bold
-highlight StatusLine ctermfg=blue	ctermbg=white
+highlight StatusLine ctermfg=blue	ctermbg=white   cterm=bold
 highlight Statement  ctermfg=Yellow			cterm=NONE
-highlight Type       ctermfg=blue			cterm=NONE
-highlight Conditional       ctermfg=blue			cterm=NONE
-highlight Title      ctermfg=blue			cterm=bold
+highlight Type		ctermfg=blue				cterm=bold
+highlight Conditional    ctermfg=blue   cterm=bold
+highlight Title			ctermfg=red
+highlight PreProc    ctermfg=cyan   cterm=bold
+highlight String     ctermfg=red
+highlight Character  ctermfg=red
+highlight Constant   ctermfg=yellow
+highlight StorageClass ctermfg=cyan cterm=bold
+highlight Structure	ctermfg=cyan
+highlight Label			ctermfg=yellow
+highlight Number		ctermfg=magenta
+highlight Repeat		ctermfg=blue cterm=bold
+highlight Operator		ctermfg=cyan
+highlight cppOperator		ctermfg=cyan
+highlight Directory		ctermfg=cyan
+highlight WarningMsg		ctermfg=red
+highlight DiffText		ctermbg=darkred
 
 
 "========= RST ============
