@@ -32,7 +32,7 @@ let g:quickrun_config = {}
 let g:quickrun_config['_'] = {'outputter/buffer/split': 'split', 'outputter/buffer/into': '1'  }
 let g:quickrun_config['ruby.rspec'] = {'command': 'rspec', 'args': '-fs --color'}
 let g:quickrun_config['markdown'] = {'outputter': 'browser' }
-let g:quickrun_config['cpp'] = { 'command': 'g++', 'cmdopt': '-std=c++11 -g' }
+let g:quickrun_config['cpp'] = { 'command': 'g++', 'cmdopt': '-std=gnu++11 -g' }
 
 " vimtest
 let g:vimtest_config = {}
