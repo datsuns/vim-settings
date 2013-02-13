@@ -14,5 +14,8 @@ Bundle 'open-browser.vim'
 Bundle 'Arduino-syntax-file'
 Bundle 'TwitVim'
 Bundle 'unite.vim'
+Bundle 'kannokanno/vimtest'
+Bundle 'Shougo/vimshell'
+Bundle 'Shougo/vimproc'
 
  filetype plugin indent on     " required!

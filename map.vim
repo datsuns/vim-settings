@@ -9,6 +9,7 @@ imap <C-@> <C-[>
 noremap <Leader>ev :edit ~/.vim<CR>
 noremap <Leader>ec :edit ~/.vim/colors<CR>
 noremap <Leader>lv :source ~/.vimrc<CR>
+noremap <Leader>ed :edit ~/Desktop<CR>
 
 map <F10> :edit ~/work/memo/task_memo.changelog<CR>
 
