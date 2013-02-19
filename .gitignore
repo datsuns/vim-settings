@@ -2,3 +2,5 @@
 backup/
 swap/
 bundle/
+
+vundle.git/
