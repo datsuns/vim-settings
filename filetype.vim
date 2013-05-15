@@ -17,3 +17,5 @@ au BufNewFile,BufRead *.ino			setf arduino
 
 " changelog
 au BufNewFile,BufRead *.changelog   setf changelog
+
+au BufNewFile,BufRead *.scala   setf scala

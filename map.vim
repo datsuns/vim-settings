@@ -6,16 +6,20 @@ map <C-l> :tabnext<CR>
 
 imap <C-@> <C-[>
 
-noremap <Leader>ev :edit ~/.vim<CR>
-noremap <Leader>ec :edit ~/.vim/colors<CR>
-noremap <Leader>lv :source ~/.vimrc<CR>
-noremap <Leader>ed :edit ~/Desktop<CR>
+noremap <silent> <Space>ev :edit ~/.vim<CR>
+noremap <silent> <Space>ec :edit ~/.vim/colors<CR>
+noremap <silent> <Space>lv :source ~/.vimrc<CR>
+noremap <silent> <Space>ed :edit ~/Desktop<CR>
 
-map <F10> :edit ~/work/memo/task_memo.changelog<CR>
+noremap <F10> :edit ~/work/memo/task_memo.changelog<CR>
 
-noremap <Leader>uf :Unite file<CR>
+" unite
+nnoremap [unite]    <Nop>
+nmap     <Space>u [unite]
+noremap <Space>uf :Unite file<CR>
+noremap <Space>ug :Unite vimgrep<CR>
 
 " ino
-noremap <Leader>ib :!ino build<CR>
-noremap <Leader>iu :!ino upload<CR>
-noremap <Leader>is :!ino serial<CR>
+noremap <silent> <Space>ib :!ino build<CR>
+noremap <silent> <Space>iu :!ino upload<CR>
+noremap <silent> <Space>is :!ino serial<CR>

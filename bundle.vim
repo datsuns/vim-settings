@@ -1,21 +1,42 @@
+set nocompatible               " Be iMproved
 
- set nocompatible               " be iMproved
- filetype off                   " required!
+if has('vim_starting')
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
 
- set rtp+=~/.vim/vundle.git
- call vundle#rc()
+call neobundle#rc(expand('~/.vim/bundle/'))
 
-Bundle 'quickrun.vim'
-Bundle 'open-browser.vim'
-Bundle 'Markdown'
-Bundle 'fakeclip'
-Bundle 'Markdown'
-Bundle 'open-browser.vim'
-Bundle 'Arduino-syntax-file'
-Bundle 'TwitVim'
-Bundle 'unite.vim'
-Bundle 'kannokanno/vimtest'
-Bundle 'Shougo/vimshell'
-Bundle 'Shougo/vimproc'
+" Let NeoBundle manage NeoBundle
+NeoBundleFetch 'Shougo/neobundle.vim'
 
- filetype plugin indent on     " required!
+" installed plugins
+NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'open-browser.vim'
+NeoBundle 'Markdown'
+NeoBundle 'fakeclip'
+NeoBundle 'Markdown'
+NeoBundle 'open-browser.vim'
+NeoBundle 'Arduino-syntax-file'
+NeoBundle 'TwitVim'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'kannokanno/vimtest'
+NeoBundle 'Shougo/vimshell'
+NeoBundle 'Shougo/vimproc'
+NeoBundle 'taglist.vim'
+NeoBundle 'gtags.vim'
+NeoBundle 'datsuns/quickrun-hooks.vim'
+NeoBundle 'vim-coffee-script'
+NeoBundle 'vim-jp/cpp-vim'
+NeoBundle 'endwise.vim'
+NeoBundle 'scala.vim' " 0.1   syntaxic coloration for Scala code
+
+
+ filetype plugin indent on     " Required!
+ "
+ " Brief help
+ " :NeoBundleList          - list configured bundles
+ " :NeoBundleInstall(!)    - install(update) bundles
+ " :NeoBundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+
+ " Installation check.
+ NeoBundleCheck
