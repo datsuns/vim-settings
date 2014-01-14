@@ -37,6 +37,7 @@ highlight Character		guifg=red
 highlight PreProc		guifg=cyan gui=bold
 highlight Number		guifg=lightred
 highlight WarningMsg	guifg=red
+highlight TabLineSel	guifg=red
 
 " Console
 highlight Normal     ctermfg=white		ctermbg=Black
@@ -64,6 +65,7 @@ highlight cppOperator		ctermfg=cyan
 highlight Directory		ctermfg=cyan
 highlight WarningMsg		ctermfg=red
 highlight DiffText		ctermbg=darkred
+highlight TabLineSel	ctermfg=red
 
 
 "========= RST ============
@@ -71,6 +73,9 @@ highlight rstSections ctermfg=cyan	cterm=bold
 
 "========= ruby ============
 highlight rubyConstant ctermfg=yellow	cterm=bold
+
+"========= javascript ============
+highlight javaScriptValue ctermfg=magenta guifg=lightred
 
 " only for vim 5
 if has("unix")
