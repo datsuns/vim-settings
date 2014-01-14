@@ -29,6 +29,18 @@ NeoBundle 'vim-coffee-script'
 NeoBundle 'vim-jp/cpp-vim'
 NeoBundle 'endwise.vim'
 NeoBundle 'scala.vim' " 0.1   syntaxic coloration for Scala code
+NeoBundle 'motemen/git-vim'
+NeoBundle 'kannokanno/previm'
+NeoBundle 'Shougo/vimfiler.vim'
+NeoBundle 'Shougo/neocomplete.vim'
+NeoBundle 'Shougo/neosnippet.vim'
+NeoBundle 'gregsexton/gitv'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'bling/vim-airline'
+NeoBundle 'jelera/vim-javascript-syntax'
+NeoBundle 'vim-scripts/JavaScript-Indent'
+NeoBundle 'rhysd/clever-f.vim'
+
 
 
  filetype plugin indent on     " Required!
