@@ -7,6 +7,7 @@ colorscheme my_color
 augroup MyFiletypeGroup
 	autocmd!
 	autocmd BufWinEnter,BufNewFile *_spec.rb set filetype=ruby.rspec
+  autocmd BufWinEnter,BufNewFile *spec_helper.rb set filetype=ruby.rspec
 	autocmd BufWinEnter,BufNewFile *_test.rb set filetype=ruby.unittest
 	"autocmd BufWritePost,FileWritePost *_test.vim VimTest
 	autocmd BufWinEnter,BufNewFile *_spec.coffee set filetype=coffee.vows
@@ -15,7 +16,12 @@ augroup END
 " quickrun
 let g:quickrun_config = {}
 "let g:quickrun_config['_'] = {'outputter/buffer/split': 'split', 'outputter/buffer/into': '1', 'runner' : 'vimproc' }
-let g:quickrun_config['_'] = {'outputter/buffer/split': 'split', 'outputter/buffer/into': '1' }
+let g:quickrun_config['_'] = {
+      \ 'outputter/buffer/split': 'split',
+      \ 'runner' : 'vimproc',
+      \ 'runner/vimproc/updatetime' : 60
+      \ 'outputter/buffer/into': '1'
+      \}
 let g:quickrun_config['ruby.rspec'] = {'command': 'rspec', 'args': '-fs --color'}
 let g:quickrun_config['ruby.unittest'] = {'command': 'rake', 'args': 'test:units'}
 let g:quickrun_config['markdown'] = {'outputter': 'browser' }
