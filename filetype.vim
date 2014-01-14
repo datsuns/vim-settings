@@ -18,4 +18,8 @@ au BufNewFile,BufRead *.ino			setf arduino
 " changelog
 au BufNewFile,BufRead *.changelog   setf changelog
 
+" scala
 au BufNewFile,BufRead *.scala   setf scala
+
+" ruby (additional)
+au BufNewFile,BufRead Gemfile,Gemfile.lock   setf ruby
