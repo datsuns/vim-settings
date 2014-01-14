@@ -6,6 +6,9 @@ map <C-l> :tabnext<CR>
 
 imap <C-@> <C-[>
 
+noremap  L zl
+noremap  H zh
+
 noremap <silent> <Space>ev :edit ~/.vim<CR>
 noremap <silent> <Space>ec :edit ~/.vim/colors<CR>
 noremap <silent> <Space>lv :source ~/.vimrc<CR>
@@ -23,3 +26,31 @@ noremap <Space>ug :Unite vimgrep<CR>
 noremap <silent> <Space>ib :!ino build<CR>
 noremap <silent> <Space>iu :!ino upload<CR>
 noremap <silent> <Space>is :!ino serial<CR>
+
+"{{{ git
+let g:git_no_map_default = 1
+nnoremap <Space>gd :GitDiff<Enter>
+nnoremap <Space>gD :GitDiff --cached<Enter>
+nnoremap <Space>gs :GitStatus<Enter>
+nnoremap <Space>gl :GitLog<Enter>
+nnoremap <Space>ga :GitAdd<Enter>
+nnoremap <Space>gA :GitAdd <cfile><Enter>
+nnoremap <Space>gc :GitCommit -v<Enter>
+nnoremap <Space>gp :GitPullRebase<Enter>
+nnoremap <Space>gb :GitBlame<Enter>
+nnoremap <Space>gV :Gitv --all<CR>
+augroup gitv
+  autocmd!
+  autocmd FileType gitv nnoremap <silent><buffer> C :<C-u>Git checkout <C-r><C-w><CR>
+  autocmd FileType gitv nnoremap <buffer> <silent> q :close<CR>
+augroup END
+"}}}
+
+"{{{ quickrun
+let g:quickrun_no_default_key_mappings=1
+silent! map <unique> <Space>r <Plug>(quickrun)
+"}}}
+
+"{{{ gtags
+nnoremap <Space>gt :Gtags<CR>
+"}}}
