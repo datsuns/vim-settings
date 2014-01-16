@@ -19,7 +19,7 @@ let g:quickrun_config = {}
 let g:quickrun_config['_'] = {
       \ 'outputter/buffer/split': 'split',
       \ 'runner' : 'vimproc',
-      \ 'runner/vimproc/updatetime' : 60
+      \ 'runner/vimproc/updatetime' : 60,
       \ 'outputter/buffer/into': '1'
       \}
 let g:quickrun_config['ruby.rspec'] = {'command': 'rspec', 'args': '-fs --color'}
