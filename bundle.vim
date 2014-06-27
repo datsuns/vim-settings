@@ -40,6 +40,11 @@ NeoBundle 'bling/vim-airline'
 NeoBundle 'jelera/vim-javascript-syntax'
 NeoBundle 'vim-scripts/JavaScript-Indent'
 NeoBundle 'rhysd/clever-f.vim'
+NeoBundle 'datsuns/vim-smv'
+NeoBundle 'leafo/moonscript-vim'
+NeoBundle 'bbatsov/rubocop'
+NeoBundle 'thinca/vim-ref'
+NeoBundle 'taka84u9/vim-ref-ri'
 
 
 
