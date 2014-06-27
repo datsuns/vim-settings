@@ -23,3 +23,9 @@ au BufNewFile,BufRead *.scala   setf scala
 
 " ruby (additional)
 au BufNewFile,BufRead Gemfile,Gemfile.lock   setf ruby
+
+" smv
+au BufNewFile,BufRead *.smv   setf smv
+
+" conf
+au BufNewFile,BufRead *.conf		setf apache
