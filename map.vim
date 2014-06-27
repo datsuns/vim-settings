@@ -16,22 +16,28 @@ noremap <silent> <Space>ed :edit ~/Desktop<CR>
 
 noremap <F10> :edit ~/work/memo/task_memo.changelog<CR>
 
+noremap <silent> <Space>co :copen<CR>
+noremap <silent> <Space>cc :cclose<CR>
+
 " unite
 nnoremap [unite]    <Nop>
 nmap     <Space>u [unite]
 noremap <Space>uf :Unite file<CR>
 noremap <Space>ug :Unite vimgrep<CR>
+noremap <Space>urr :Unite ref/ri<CR>
+
 
 " ino
 noremap <silent> <Space>ib :!ino build<CR>
 noremap <silent> <Space>iu :!ino upload<CR>
 noremap <silent> <Space>is :!ino serial<CR>
 
+
 "{{{ git
 let g:git_no_map_default = 1
-nnoremap <Space>gd :GitDiff<Enter>
+"nnoremap <Space>gd :GitDiff<Enter>
 nnoremap <Space>gD :GitDiff --cached<Enter>
-nnoremap <Space>gs :GitStatus<Enter>
+"nnoremap <Space>gs :GitStatus<Enter>
 nnoremap <Space>gl :GitLog<Enter>
 nnoremap <Space>ga :GitAdd<Enter>
 nnoremap <Space>gA :GitAdd <cfile><Enter>
@@ -46,11 +52,21 @@ augroup gitv
 augroup END
 "}}}
 
+
+"{{{ fugitive
+nnoremap <Space>gs :Gstatus<Enter>
+nnoremap <Space>gd :Gdiff<Enter>
+"}}}
+
+
 "{{{ quickrun
 let g:quickrun_no_default_key_mappings=1
 silent! map <unique> <Space>r <Plug>(quickrun)
 "}}}
 
+
 "{{{ gtags
 nnoremap <Space>gt :Gtags<CR>
+nnoremap <Space>gtr :Gtags -r<CR>
+nnoremap <Space>gts :Gtags -s<CR>
 "}}}
