@@ -25,6 +25,8 @@ set fileencodings+=cp932
 set fileencodings+=default
 set fileencodings+=latin1
 
+set diffopt+=vertical
+
 set statusline=%m%F\ \ [%{&encoding}][%{&fileformat}]%y\ \ %l/%L\<%c>\ \ %P
 
 
