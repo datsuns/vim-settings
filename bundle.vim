@@ -34,19 +34,22 @@ NeoBundle 'kannokanno/previm'
 NeoBundle 'Shougo/vimfiler.vim'
 NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'Shougo/neosnippet.vim'
+NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'gregsexton/gitv'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'jelera/vim-javascript-syntax'
 NeoBundle 'vim-scripts/JavaScript-Indent'
 NeoBundle 'rhysd/clever-f.vim'
-NeoBundle 'datsuns/vim-smv'
 NeoBundle 'leafo/moonscript-vim'
 NeoBundle 'bbatsov/rubocop'
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'taka84u9/vim-ref-ri'
+NeoBundle 'kana/vim-metarw'
 
 
+NeoBundle 'datsuns/vim-smv'
+NeoBundle 'datsuns/vim-metarw-svn'
 
  filetype plugin indent on     " Required!
  "
