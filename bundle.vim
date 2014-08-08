@@ -46,10 +46,11 @@ NeoBundle 'bbatsov/rubocop'
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'taka84u9/vim-ref-ri'
 NeoBundle 'kana/vim-metarw'
-
+NeoBundle 'kana/vim-arpeggio'
 
 NeoBundle 'datsuns/vim-smv'
 NeoBundle 'datsuns/vim-metarw-svn'
+NeoBundle 'vim-metarw-qiita'
 
  filetype plugin indent on     " Required!
  "
