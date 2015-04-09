@@ -70,3 +70,8 @@ nnoremap <Space>gt :Gtags<CR>
 nnoremap <Space>gtr :Gtags -r<CR>
 nnoremap <Space>gts :Gtags -s<CR>
 "}}}
+
+
+"{{{ TagList
+nnoremap <Space>tl :Tlist<CR>
+"
