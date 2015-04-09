@@ -47,6 +47,7 @@ NeoBundle 'thinca/vim-ref'
 NeoBundle 'taka84u9/vim-ref-ri'
 NeoBundle 'kana/vim-metarw'
 NeoBundle 'kana/vim-arpeggio'
+NeoBundle 'mattn/webapi-vim'
 
 NeoBundle 'datsuns/vim-smv'
 NeoBundle 'datsuns/vim-metarw-svn'
