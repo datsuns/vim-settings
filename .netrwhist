@@ -1,6 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/Users/datsuns/.vim/bundle/quickrun.vim'
-let g:netrw_dirhist_2='/Users/datsuns/work/programming/ruby/rspec'
-let g:netrw_dirhist_3='/Users/datsuns/.vim'
-let g:netrw_dirhist_4='/Users/datsuns/.vim/bundle/neobundle.vim'
