@@ -38,6 +38,7 @@ highlight PreProc		guifg=cyan gui=bold
 highlight Number		guifg=lightred
 highlight WarningMsg	guifg=red
 highlight TabLineSel	guifg=red
+highlight CursorLine	guibg=#333333
 
 " Console
 highlight Normal     ctermfg=white		ctermbg=Black
