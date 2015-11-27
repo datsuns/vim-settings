@@ -26,6 +26,9 @@ noremap <Space>uf :Unite file<CR>
 noremap <Space>ug :Unite vimgrep<CR>
 noremap <Space>urr :Unite ref/ri<CR>
 
+nmap <Space>p  "*p<CR><ESC>
+vmap <Space>y  "*y
+
 
 " ino
 noremap <silent> <Space>ib :!ino build<CR>
