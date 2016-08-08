@@ -71,6 +71,7 @@ silent! map <unique> <Space>r <Plug>(quickrun)
 
 "{{{ gtags
 nnoremap <Space>gt :Gtags<CR>
+nnoremap <Space>gT :tabnew<CR> :Gtags <cword><CR>
 nnoremap <Space>gtr :Gtags -r<CR>
 nnoremap <Space>gts :Gtags -s<CR>
 "}}}
