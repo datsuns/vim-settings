@@ -207,3 +207,9 @@ let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 call arpeggio#load()
 Arpeggio inoremap jk  <Esc>
 "}}}
+
+"{{{golan
+"{{{vim-go-extra
+autocmd FileType go autocmd BufWritePre <buffer> Fmt
+"}}}
+"}}}
