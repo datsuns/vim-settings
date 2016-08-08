@@ -52,6 +52,9 @@ NeoBundle 'kana/vim-metarw'
 NeoBundle 'kana/vim-arpeggio'
 NeoBundle 'mattn/webapi-vim'
 
+" for golang
+NeoBundle 'vim-jp/vim-go-extra'
+
 NeoBundle 'datsuns/vim-smv'
 NeoBundle 'datsuns/vim-metarw-svn'
 NeoBundle 'vim-metarw-qiita'
