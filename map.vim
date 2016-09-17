@@ -8,6 +8,7 @@ imap <C-@> <C-[>
 
 noremap  L zl
 noremap  H zh
+noremap  <Space>w :w <CR>
 noremap  <Space>gf :tabnew <cfile><CR>
 
 noremap <silent> <Space>ev :edit ~/.vim<CR>
