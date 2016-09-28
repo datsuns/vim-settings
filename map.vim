@@ -46,7 +46,7 @@ nnoremap <Space>gD :GitDiff --cached<Enter>
 nnoremap <Space>gl :GitLog<Enter>
 nnoremap <Space>ga :GitAdd<Enter>
 nnoremap <Space>gA :GitAdd <cfile><Enter>
-nnoremap <Space>gc :GitCommit -v<Enter>
+nnoremap <Space>gc :GitCommit <Enter>
 nnoremap <Space>gp :GitPullRebase<Enter>
 nnoremap <Space>gb :GitBlame<Enter>
 nnoremap <Space>gV :Gitv --all<CR>
