@@ -16,10 +16,12 @@ noremap <silent> <Space>ec :edit ~/.vim/colors<CR>
 noremap <silent> <Space>lv :source ~/.vimrc<CR>
 noremap <silent> <Space>ed :edit ~/Desktop<CR>
 
-noremap <F10> :edit ~/work/memo/task_memo.changelog<CR>
+"noremap <F10> :edit ~/work/memo/task_memo.changelog<CR>
 
 noremap <silent> <Space>co :copen<CR>
 noremap <silent> <Space>cc :cclose<CR>
+noremap <silent> <C-n> :cn<CR>
+noremap <silent> <C-p> :cp<CR>
 
 " unite
 nnoremap [unite]    <Nop>
