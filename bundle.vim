@@ -48,7 +48,7 @@ NeoBundle 'leafo/moonscript-vim'
 NeoBundle 'bbatsov/rubocop'
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'taka84u9/vim-ref-ri'
-NeoBundle 'kana/vim-metarw'
+"NeoBundle 'kana/vim-metarw'
 NeoBundle 'kana/vim-arpeggio'
 NeoBundle 'mattn/webapi-vim'
 
@@ -57,6 +57,7 @@ NeoBundle 'vim-jp/vim-go-extra'
 
 NeoBundle 'datsuns/vim-smv'
 NeoBundle 'datsuns/vim-metarw-svn'
+NeoBundle 'datsuns/vim-metarw'
 NeoBundle 'vim-metarw-qiita'
 
 call neobundle#end()
