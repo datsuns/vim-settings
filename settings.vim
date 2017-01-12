@@ -213,3 +213,11 @@ Arpeggio inoremap jk  <Esc>
 autocmd FileType go autocmd BufWritePre <buffer> Fmt
 "}}}
 "}}}
+
+
+"{{{vim-metarw-svn
+let g:metaraw_svn_repository_list = {
+      \'hello': 'https://github.com/datsuns/vim-settings.git/',
+      \}
+"}}}
+"
