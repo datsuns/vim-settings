@@ -89,8 +89,8 @@ let g:Gitv_OpenPreviewOnLaunch = 0
 "}}}
 
 "airline{{{
-  let g:airline#extensions#whitespace#enabled = 1
-  nnoremap <buffer> <Space>at :AirlineToggle<Cr>
+  "let g:airline#extensions#whitespace#enabled = 1
+  "nnoremap <buffer> <Space>at :AirlineToggle<Cr>
 "}}}
 
 "vimshel{{{
@@ -203,10 +203,6 @@ let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\
 let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 "}}}
 
-"{{{vim-arpeggio
-call arpeggio#load()
-Arpeggio inoremap jk  <Esc>
-"}}}
 
 "{{{golan
 "{{{vim-go-extra

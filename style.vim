@@ -29,4 +29,7 @@ set diffopt+=vertical
 
 set statusline=%m%F\ \ [%{&encoding}][%{&fileformat}]%y\ \ %l/%L\<%c>\ \ %P
 
+" need to enable airline
+set laststatus=2
+
 
