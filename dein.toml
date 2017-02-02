@@ -49,3 +49,7 @@ repo = 'thinca/vim-quickrun'
 
 [[plugins]]
 repo = 'Shougo/unite.vim.git'
+
+[[plugins]]
+repo = 'fatih/vim-go'
+on_ft = ['go']
