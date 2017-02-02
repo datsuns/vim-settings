@@ -211,6 +211,8 @@ autocmd FileType go autocmd BufWritePre <buffer> Fmt
 "{{{vim-go-
 " to enable :GoDef etc.
 autocmd FileType go filetype plugin indent on
+" customized mapping
+autocmd FileType go nnoremap <buffer> <silent> <Space><C-]> :<C-u>call go#def#Jump("tab")<CR>
 "}}}
 "}}}
 
