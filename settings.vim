@@ -205,14 +205,13 @@ let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
 
 "{{{golang
-"{{{vim-go-extra
-autocmd FileType go autocmd BufWritePre <buffer> Fmt
-"}}}
-"{{{vim-go-
+"{{{vim-go
 " to enable :GoDef etc.
 autocmd FileType go filetype plugin indent on
 " customized mapping
 autocmd FileType go nnoremap <buffer> <silent> <Space><C-]> :<C-u>call go#def#Jump("tab")<CR>
+
+let g:go_fmt_autosave = 1
 "}}}
 "}}}
 
