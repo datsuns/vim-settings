@@ -204,9 +204,13 @@ let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 "}}}
 
 
-"{{{golan
+"{{{golang
 "{{{vim-go-extra
 autocmd FileType go autocmd BufWritePre <buffer> Fmt
+"}}}
+"{{{vim-go-
+" to enable :GoDef etc.
+autocmd FileType go filetype plugin indent on
 "}}}
 "}}}
 
