@@ -91,6 +91,7 @@ let g:Gitv_OpenPreviewOnLaunch = 0
 "airline{{{
   "let g:airline#extensions#whitespace#enabled = 1
   "nnoremap <buffer> <Space>at :AirlineToggle<Cr>
+  let g:airline#extensions#branch#enabled = 0
 "}}}
 
 "vimshel{{{
