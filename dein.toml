@@ -53,3 +53,7 @@ repo = 'Shougo/unite.vim.git'
 [[plugins]]
 repo = 'fatih/vim-go'
 on_ft = ['go']
+
+#NeoBundle 'datsuns/vim-smv'
+#NeoBundle 'datsuns/vim-metarw-svn'
+#NeoBundle 'datsuns/vim-metarw'

@@ -1,5 +1,4 @@
 
-"source ~/.vim/bundle.vim
 source ~/.vim/dein.vim
 source ~/.vim/settings.vim
 source ~/.vim/map.vim
