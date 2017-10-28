@@ -17,6 +17,9 @@ repo = 'Shougo/vimfiler.vim'
 #repo = 'Shougo/neosnippet-snippets'
 
 [[plugins]]
+repo = 'Shougo/deoplete.nvim'
+
+[[plugins]]
 repo = 'Shougo/vimproc.vim'
 build = 'make'
 
