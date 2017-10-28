@@ -20,6 +20,15 @@ repo = 'Shougo/vimfiler.vim'
 repo = 'Shougo/deoplete.nvim'
 
 [[plugins]]
+repo = 'roxma/nvim-yarp'
+
+[[plugins]]
+# depends:
+#  - set pyxversion=3
+#  - pip3 install neovim
+repo = 'roxma/vim-hug-neovim-rpc'
+
+[[plugins]]
 repo = 'Shougo/vimproc.vim'
 build = 'make'
 

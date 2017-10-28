@@ -222,4 +222,11 @@ let g:metaraw_svn_repository_list = {
       \'hello': 'https://github.com/datsuns/vim-settings.git/',
       \}
 "}}}
-"
+
+"{{{deoplete
+let g:deoplete#enable_at_startup = 1
+"}}}
+
+"{{{for python
+set pyxversion=3
+"}}}
