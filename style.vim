@@ -33,4 +33,5 @@ set statusline=%m%F\ \ [%{&encoding}][%{&fileformat}]%y\ \ %l/%L\<%c>\ \ %P
 set laststatus=2
 
 set clipboard+=unnamed
+set foldmethod=marker
 
