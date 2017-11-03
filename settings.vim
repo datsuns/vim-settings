@@ -88,11 +88,11 @@ autocmd FileType vimfiler nmap <buffer> <F5>  <Plug>(vimfiler_redraw_screen)
 let g:Gitv_OpenPreviewOnLaunch = 0
 "}}}
 
-"airline{{{
-  "let g:airline#extensions#whitespace#enabled = 1
-  "nnoremap <buffer> <Space>at :AirlineToggle<Cr>
-  let g:airline#extensions#branch#enabled = 0
-"}}}
+""airline{{{
+"  "let g:airline#extensions#whitespace#enabled = 1
+"  "nnoremap <buffer> <Space>at :AirlineToggle<Cr>
+"  let g:airline#extensions#branch#enabled = 0
+""}}}
 
 "vimshel{{{
 autocmd FileType vimshell noremap <buffer> <F5> <Plug>(vimshell_clear)
@@ -229,4 +229,10 @@ let g:deoplete#enable_at_startup = 1
 
 "{{{for python
 set pyxversion=3
+"}}}
+
+"{{{lightline
+let g:lightline = {
+      \ 'colorscheme': 'OldHope',
+      \ }
 "}}}

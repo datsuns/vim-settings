@@ -33,7 +33,7 @@ repo = 'Shougo/vimproc.vim'
 build = 'make'
 
 [[plugins]]
-repo = 'vim-airline/vim-airline'
+repo = 'itchyny/lightline.vim'
 
 [[plugins]]
 repo = 'cespare/vim-toml'
