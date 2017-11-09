@@ -11,10 +11,10 @@ augroup MyFiletypeGroup
   autocmd BufWinEnter,BufNewFile *spec_helper.rb set filetype=ruby.rspec
 	autocmd BufWinEnter,BufNewFile *_test.rb set filetype=ruby.unittest
 	"autocmd BufWritePost,FileWritePost *_test.vim VimTest
-	autocmd BufWinEnter,BufNewFile *_spec.coffee set filetype=coffee.vows
+	"autocmd BufWinEnter,BufNewFile *_spec.coffee set filetype=coffee.vows
 augroup END
 
-" quickrun
+"{{{quickrun
 let g:quickrun_config = {}
 "let g:quickrun_config['_'] = {'outputter/buffer/split': 'split', 'outputter/buffer/into': '1', 'runner' : 'vimproc' }
 let g:quickrun_config['_'] = {
@@ -31,9 +31,11 @@ let g:quickrun_config['c'] = { 'command': 'gcc', 'cmdopt': '-std=c++11' }
 let g:quickrun_config['coffee.vows'] = {'command': 'vows', 'args': '--spec',
         \ 'hook/coffee_vows_filter/enable': 1,
         \ }
+"}}}
 
-" vimtest
+"{{{vimtest
 let g:vimtest_config = {}
+"}}}
 
 "{{{scala
 function! s:my_start_sbt()
@@ -204,7 +206,6 @@ let g:Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
 "let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 ""}}}
 
-
 "{{{golang
 "{{{vim-go
 " to enable :GoDef etc.
@@ -215,7 +216,6 @@ autocmd FileType go nnoremap <buffer> <silent> <Space><C-]> :<C-u>call go#def#Ju
 let g:go_fmt_autosave = 1
 "}}}
 "}}}
-
 
 "{{{vim-metarw-svn
 let g:metaraw_svn_repository_list = {
@@ -242,4 +242,13 @@ set pyxversion=3
 let g:lightline = {
       \ 'colorscheme': 'OldHope',
       \ }
+"}}}
+
+"{{{deoplete
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_smart_case = 1
+inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
+"}}}
+
+"{{{clang_complete
 "}}}
