@@ -5,7 +5,8 @@ repo = 'Shougo/dein.vim'
 repo = 'Shougo/vimshell.vim'
 
 [[plugins]]
-repo = 'Shougo/vimfiler.vim'
+#repo = 'Shougo/vimfiler.vim'
+repo = 'justinmk/vim-dirvish'
 
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
