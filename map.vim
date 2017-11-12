@@ -94,6 +94,7 @@ augroup my_dirvish_events
     autocmd FileType dirvish call fugitive#detect(@%)
 
     autocmd FileType dirvish map <buffer> u <Plug>(dirvish_up)
+    autocmd FileType dirvish map <buffer> l i
 
     " Map `gh` to hide dot-prefixed files.  Press `R` to "toggle" (reload).
     autocmd FileType dirvish nnoremap <silent><buffer>
