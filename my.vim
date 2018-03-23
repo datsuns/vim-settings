@@ -1,11 +1,17 @@
-
-source ~/.vim/dein.vim
-source ~/.vim/settings.vim
-source ~/.vim/map.vim
-source ~/.vim/style.vim
-if has("gui_running")
-	source ~/.vim/gui.vim
+let g:my_home_directory = "$HOME/.vim"
+if has("win32")
+  let g:my_home_directory = "$HOME/vimfiles"
 endif
 
-let $RUBY_DLL = "/Users/datsuns/.rbenv/versions/2.0.0-p451/lib/libruby.dylib"
+set encoding=utf-8
+
+execute "source " . g:my_home_directory . "/dein.vim"
+execute "source " . g:my_home_directory . "/settings.vim"
+execute "source " . g:my_home_directory . "/map.vim"
+execute "source " . g:my_home_directory . "/style.vim"
+if has("gui_running")
+	execute "source " . g:my_home_directory . "/gui.vim"
+endif
+
+colorscheme my_color
 
