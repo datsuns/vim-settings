@@ -1,4 +1,4 @@
-undo/
-backup/
-swap/
+undo/*
+backup/*
+swap/*
 .netrwhist
