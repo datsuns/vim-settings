@@ -4,17 +4,19 @@ set nocompatible               " Be iMproved
 endif
 
 " Required:
-set runtimepath+=$HOME/.vim/dein/repos/github.com/Shougo/dein.vim
+execute "set runtimepath+=" . g:my_home_directory . "/dein/repos/github.com/Shougo/dein.vim"
+"set runtimepath+=g:my_home_directory . "/dein/repos/github.com/Shougo/dein.vim"
+"set runtimepath+=expand(g:my_home_directory) . "/dein/repos/github.com/Shougo/dein.vim"
 
 " Required:
-if dein#load_state('~/.vim/dein')
-  call dein#begin('~/.vim/dein')
+if dein#load_state(g:my_home_directory . '/dein')
+  call dein#begin(g:my_home_directory . '/dein')
 
-  call dein#load_toml('~/.vim/dein.toml', {'lazy': 0})
+  call dein#load_toml(g:my_home_directory . '/dein.toml', {'lazy': 0})
 
   "" Let dein manage dein
   "" Required:
-  "call dein#add('~/.vim/dein/repos/github.com/Shougo/dein.vim')
+  "call dein#add(g:my_home_directory . '/dein/repos/github.com/Shougo/dein.vim')
   "
   "" Add or remove your plugins here:
   "call dein#add('Shougo/neosnippet.vim')
