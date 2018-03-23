@@ -95,6 +95,9 @@ augroup my_dirvish_events
 
     autocmd FileType dirvish map <buffer> u <Plug>(dirvish_up)
     autocmd FileType dirvish map <buffer> l i
+    autocmd FileType dirvish map <buffer> h <Plug>(dirvish_up)
+    autocmd FileType dirvish map <buffer> e <CR>
+    autocmd FileType dirvish map <buffer> gc :execute 'lcd ' fnameescape(expand('%:p:h'))<CR>
 
     " Map `gh` to hide dot-prefixed files.  Press `R` to "toggle" (reload).
     autocmd FileType dirvish nnoremap <silent><buffer>
