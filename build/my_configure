@@ -1,0 +1,34 @@
+rm ./src/auto/config.cache
+
+./configure                    \
+  --with-features=huge         \
+  --enable-multibyte           \
+  --prefix=/usr/local          \
+  --enable-python3interp       \
+  --without-x                  \
+
+
+#CFLAGS=-I/usr/lib/perl5/5.22/i686-cygwin-threads-64int/CORE \
+ #--enable-python3interp       \
+ #--enable-pythoninterp        \
+ #--enable-perlinterp=dynamic  \
+ #--enable-cscope              \
+ #--enable-rubyinterp          \
+ #--enable-python3interp       \
+ #--enable-perlinterp=dynamic  \
+ #--enable-rubyinterp=dynamic    \
+ # until succeed to inistall by rbenv
+ #--enable-rubyinterp    \
+ #LDFLAGS="-L $HOME/.rbenv/versions/2.0.0-p0/lib" \
+ #RUBY_VER_LONG=1.9.3    \
+ #RUBY= $HOME/.rbenv/versions/1.9.3-p392 \
+ #DYNAMIC_RUBY=yes       \
+ #RUBY_VER=19
+ #+clientserver  \
+ #--with-luajit                \
+ #--enable-luainterp           \
+ #--enable-terminal
+
+
+ # --enable-largefile  \
+ # --enable-perlinterp  \
