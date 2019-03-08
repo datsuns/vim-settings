@@ -8,20 +8,20 @@ repo = 'Shougo/vimshell.vim'
 #repo = 'Shougo/vimfiler.vim'
 repo = 'justinmk/vim-dirvish'
 
-[[plugins]]
-repo = 'Shougo/deoplete.nvim'
+#[[plugins]]
+#repo = 'Shougo/deoplete.nvim'
 
-[[plugins]]
-repo = 'roxma/nvim-yarp'
+#[[plugins]]
+#repo = 'roxma/nvim-yarp'
 
-[[plugins]]
+#[[plugins]]
 # depends:
 #  - set pyxversion=3
 #  - pip3 install neovim
-repo = 'roxma/vim-hug-neovim-rpc'
+#repo = 'roxma/vim-hug-neovim-rpc'
 
-[[plugins]]
-repo = 'tweekmonster/deoplete-clang2'
+#[[plugins]]
+#repo = 'tweekmonster/deoplete-clang2'
 
 [[plugins]]
 repo = 'Shougo/vimproc.vim'
@@ -54,8 +54,8 @@ repo = 'tpope/vim-fugitive'
 [[plugins]]
 repo = 'thinca/vim-quickrun'
 
-[[plugins]]
-repo = 'Shougo/unite.vim.git'
+#[[plugins]]
+#repo = 'Shougo/unite.vim.git'
 
 [[plugins]]
 repo = 'fatih/vim-go'
