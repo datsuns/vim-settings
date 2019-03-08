@@ -9,9 +9,10 @@ execute "source " . g:my_home_directory . "/dein.vim"
 execute "source " . g:my_home_directory . "/settings.vim"
 execute "source " . g:my_home_directory . "/map.vim"
 execute "source " . g:my_home_directory . "/style.vim"
-if has("gui_running")
-	execute "source " . g:my_home_directory . "/gui.vim"
-endif
+" should source from _gvimrc
+"if has("gui_running")
+"	execute "source " . g:my_home_directory . "/gui.vim"
+"endif
 
 colorscheme my_color
 
