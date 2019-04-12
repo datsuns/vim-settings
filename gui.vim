@@ -1,5 +1,5 @@
 if has("win32")
-  set guifont=Ricty_Diminished:h20
+  set guifont=Myrica_M:h20:cSHIFTJIS:qDRAFT
   set renderoptions=type:directx
   set guioptions+=C
   autocmd GUIEnter * simalt ~x
@@ -16,3 +16,9 @@ set guioptions-=m
 set guioptions-=M
 set guioptions-=T
 set guioptions+=PR
+
+function! GuiTabLabel()
+    "return fnamemodify(bufname(winbufnr(1)), ":t")
+    return bufname("%")
+endfunction
+set guitablabel=%{GuiTabLabel()}
