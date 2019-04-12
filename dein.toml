@@ -61,6 +61,10 @@ repo = 'thinca/vim-quickrun'
 repo = 'fatih/vim-go'
 on_ft = ['go']
 
+[[plugins]]
+repo = 'juneedahamed/svnj.vim'
+
+
 #NeoBundle 'datsuns/vim-smv'
 #NeoBundle 'datsuns/vim-metarw-svn'
 #NeoBundle 'datsuns/vim-metarw'
