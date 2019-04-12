@@ -23,17 +23,6 @@ noremap <silent> <Space>cc :cclose<CR>
 noremap <silent> <C-n> :cn<CR>
 noremap <silent> <C-p> :cp<CR>
 
-"{{{ unite
-nnoremap [unite]    <Nop>
-nmap     <Space>u [unite]
-noremap <Space>uf :Unite file<CR>
-noremap <Space>ug :Unite vimgrep<CR>
-noremap <Space>urr :Unite ref/ri<CR>
-
-nmap <Space>p  "*p<CR><ESC>
-vmap <Space>y  "*y
-"}}}
-
 "{{{ ino
 "noremap <silent> <Space>ib :!ino build<CR>
 "noremap <silent> <Space>iu :!ino upload<CR>
