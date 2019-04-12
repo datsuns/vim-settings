@@ -75,7 +75,6 @@ augroup vimrc_scala
   autocmd!
   autocmd FileType scala call s:vimrc_scala()
   autocmd FileType scala nnoremap <buffer> <Space>st :<C-u>StartSBT
-  autocmd FileType scala nnoremap <Space>ss :VimShellSendString
 augroup END
 "}}}
 
@@ -96,10 +95,6 @@ let g:Gitv_OpenPreviewOnLaunch = 0
 "  let g:airline#extensions#branch#enabled = 0
 ""}}}
 
-"vimshel{{{
-autocmd FileType vimshell noremap <buffer> <F5> <Plug>(vimshell_clear)
-autocmd FileType vimshell noremap <buffer> <C-l> :tabnext<CR>
-"}}}
 
 "javascript indenter{{{
 " この設定入れるとshiftwidthを1にしてインデントしてくれる
@@ -135,7 +130,6 @@ let g:Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
 "" Define dictionary.
 "let g:neocomplete#sources#dictionary#dictionaries = {
 "    \ 'default' : '',
-"    \ 'vimshell' : $HOME.'/.vimshell_hist',
 "    \ 'scheme' : $HOME.'/.gosh_completions'
 "        \ }
 "
