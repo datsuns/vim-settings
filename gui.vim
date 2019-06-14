@@ -1,5 +1,5 @@
 if has("win32")
-  set guifont=Myrica_M:h20:cSHIFTJIS:qDRAFT
+  set guifont=MyricaM_M:h18:cSHIFTJIS:qDRAFT
   set renderoptions=type:directx
   set guioptions+=C
   autocmd GUIEnter * simalt ~x
