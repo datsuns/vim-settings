@@ -19,7 +19,7 @@ let g:quickrun_config = {}
 "let g:quickrun_config['_'] = {'outputter/buffer/split': 'split', 'outputter/buffer/into': '1', 'runner' : 'vimproc' }
 let g:quickrun_config['_'] = {
       \ 'outputter/buffer/split': 'split',
-      \ 'runner' : 'vimproc',
+      \ 'runner' : 'job',
       \ 'runner/vimproc/updatetime' : 60,
       \ 'outputter/buffer/into': '1'
       \}
