@@ -1,7 +1,7 @@
 volt profile set my
 
 volt get github.com/justinmk/vim-dirvish
-volt get github.com/Shougo/vimproc.vim
+#volt get github.com/Shougo/vimproc.vim
 volt get github.com/itchyny/lightline.vim
 volt get github.com/cespare/vim-toml
 volt get github.com/vim-scripts/taglist.vim
