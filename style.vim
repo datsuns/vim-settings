@@ -34,6 +34,7 @@ set statusline=%m%F\ \ [%{&encoding}][%{&fileformat}]%y\ \ %l/%L\<%c>\ \ %P
 " need to enable airline
 set laststatus=2
 
-"set clipboard+=unnamed
+set clipboard=autoselect
+"set clipboard-=unnamedplus
 set foldmethod=marker
 
