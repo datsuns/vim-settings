@@ -246,3 +246,7 @@ inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
 
 "{{{clang_complete
 "}}}
+"
+"previm{{{
+let g:previm_show_header = 0
+"}}}
