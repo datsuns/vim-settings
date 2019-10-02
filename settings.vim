@@ -246,7 +246,15 @@ inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
 
 "{{{clang_complete
 "}}}
+
 "
 "previm{{{
 let g:previm_show_header = 0
 "}}}
+
+"{{{dirvish
+  let g:loaded_netrwPlugin = 1
+  command! -nargs=? -complete=dir Explore Dirvish <args>
+  command! -nargs=? -complete=dir Sexplore belowright split | silent Dirvish <args>
+  command! -nargs=? -complete=dir Vexplore leftabove vsplit | silent Dirvish <args>
+"}
