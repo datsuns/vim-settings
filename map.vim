@@ -11,11 +11,14 @@ noremap  H zh
 noremap  <Space>w :w <CR>
 nmap gf gF
 nnoremap <silent> <Space>gf  :tabedit <C-r><C-F><CR>
+noremap  <Space>y "*y<CR>
+noremap  <Space>Y "*Y<CR>
 
 noremap <silent> <Space>ev :edit ~/.vim<CR>
 noremap <silent> <Space>ec :edit ~/.vim/colors<CR>
 "noremap <silent> <Space>lv :source ~/.vimrc<CR>
 noremap <silent> <Space>ed :edit ~/Desktop<CR>
+noremap <silent> <Space>ew :edit ~/work<CR>
 
 "noremap <F10> :edit ~/work/memo/task_memo.changelog<CR>
 
@@ -92,5 +95,14 @@ augroup my_dirvish_events
     " Map `gh` to hide dot-prefixed files.  Press `R` to "toggle" (reload).
     autocmd FileType dirvish nnoremap <silent><buffer>
       \ . :silent keeppatterns g@\v/\.[^\/]+/?$@d _<cr>
+augroup END
+"}}}
+
+"{{{ flutter-vim
+augroup flutter_vim_maps
+  autocmd!
+  autocmd FileType dart nnoremap <Space>fr :FlutterHotReload<cr>
+  autocmd FileType dart nnoremap <Space>fR :FlutterHotRestart<cr>
+  autocmd FileType dart nnoremap <Space>fd :FlutterDevices<cr>
 augroup END
 "}}}
