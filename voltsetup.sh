@@ -13,4 +13,6 @@ volt get github.com/tpope/vim-fugitive
 volt get github.com/thinca/vim-quickrun
 volt get github.com/fatih/vim-go
 volt get github.com/juneedahamed/svnj.vim
+volt get github.com/datsuns/vim-flutter
+volt get github.com/dart-lang/dart-vim-plugin
 
