@@ -3,6 +3,9 @@ if exists('b:did_indent')
 endif
 let b:did_indent = 1
 
+setlocal tabstop=2
+setlocal shiftwidth=2
+
 setlocal cindent
 setlocal cinoptions+=j1,J1,(2s,u2s,U1,m1,+2s
 
