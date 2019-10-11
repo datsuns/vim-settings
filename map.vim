@@ -68,14 +68,22 @@ silent! map <unique> <Space>r <Plug>(quickrun)
 
 
 "{{{ gtags
-function! My_gtags_on_new_tab(key, cmd)
-  echo key
+function! s:my_gtags_search_reference(option, keyword)
+  execute 'tabnew'
+  execute 'Gtags ' . a:option . ' ' . a:keyword
 endfunction
-nnoremap <Space>gt :Gtags<CR>
-"nnoremap <Space>gT :tabnew<CR> :Gtags <cword><CR>
-nnoremap <Space>gT :Gtags <cword><CR>
-nnoremap <Space>gtr :Gtags -r<CR>
-nnoremap <Space>gts :Gtags -s<CR>
+nnoremap [gtags]    <Nop>
+nmap     <Space>g [gtags]
+nnoremap <silent> [gtags]t :Gtags<CR>
+nnoremap <silent> [gtags]T  :call <SID>my_gtags_search_reference("", expand('<cword>'))<CR>
+nnoremap <silent> [gtags]tr :call <SID>my_gtags_search_reference("-r", expand('<cword>'))<CR>
+nnoremap <silent> [gtags]ts :call <SID>my_gtags_search_reference("-s", expand('<cword>'))<CR>
+nnoremap <silent> [gtags]tt :call <SID>my_gtags_search_reference("-t", expand('<cword>'))<CR>
+nnoremap <silent> [gtags]tR :execute "Gtags -r " . @*<CR>
+nnoremap <silent> [gtags]g :execute  "Gtags " . @*<CR>
+"nnoremap <silent> [gtags]ts :Gtags -s<CR>
+"nnoremap <silent> [gtags]tt :Gtags -t<CR>
+
 "}}}
 
 
