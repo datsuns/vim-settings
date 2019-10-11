@@ -68,8 +68,12 @@ silent! map <unique> <Space>r <Plug>(quickrun)
 
 
 "{{{ gtags
+function! My_gtags_on_new_tab(key, cmd)
+  echo key
+endfunction
 nnoremap <Space>gt :Gtags<CR>
-nnoremap <Space>gT :tabnew<CR> :Gtags <cword><CR>
+"nnoremap <Space>gT :tabnew<CR> :Gtags <cword><CR>
+nnoremap <Space>gT :Gtags <cword><CR>
 nnoremap <Space>gtr :Gtags -r<CR>
 nnoremap <Space>gts :Gtags -s<CR>
 "}}}
@@ -101,8 +105,10 @@ augroup END
 "{{{ flutter-vim
 augroup flutter_vim_maps
   autocmd!
-  autocmd FileType dart nnoremap <Space>fr :FlutterHotReload<cr>
+  "autocmd FileType dart nnoremap <Space>fr :FlutterHotReload<cr>
+  autocmd FileType dart nnoremap <Space>fr :FlutterRun<cr>
   autocmd FileType dart nnoremap <Space>fR :FlutterHotRestart<cr>
   autocmd FileType dart nnoremap <Space>fd :FlutterDevices<cr>
+  autocmd FileType dart nnoremap <Space>fq :FlutterQuit<cr>
 augroup END
 "}}}
