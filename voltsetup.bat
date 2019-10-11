@@ -17,6 +17,8 @@ volt get github.com/previm/previm
 volt get github.com/tyru/open-browser.vim
 volt get github.com/peterhoeg/vim-qml
 volt get github.com/dart-lang/dart-vim-plugin
-volt get github.com/thosakwe/vim-flutter
+rem volt get github.com/thosakwe/vim-flutter
+volt get github.com/datsuns/vim-flutter
 volt get github.com/vim-scripts/autoscroll.vim
+volt get github.com/datsuns/vim-go-openimport
 
