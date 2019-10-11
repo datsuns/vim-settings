@@ -1,5 +1,5 @@
 if has("win32")
-  set guifont=MyricaM_M:h18:cSHIFTJIS:qDRAFT
+  set guifont=MyricaM_M:h22:cSHIFTJIS:qDRAFT
   set renderoptions=type:directx
   set guioptions+=C
   autocmd GUIEnter * simalt ~x
@@ -15,10 +15,13 @@ set guioptions-=e
 set guioptions-=m
 set guioptions-=M
 set guioptions-=T
-set guioptions+=PR
+"set guioptions+=P
+set guioptions+=R
 
 function! GuiTabLabel()
     "return fnamemodify(bufname(winbufnr(1)), ":t")
     return bufname("%")
 endfunction
 set guitablabel=%{GuiTabLabel()}
+
+noremap <silent> <F12> :set guifont=*<CR>
