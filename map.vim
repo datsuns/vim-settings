@@ -101,7 +101,8 @@ augroup END
 "{{{ flutter-vim
 augroup flutter_vim_maps
   autocmd!
-  autocmd FileType dart nnoremap <Space>fr :FlutterHotReload<cr>
+  autocmd FileType dart nnoremap <Space>fr :FlutterRun<cr>
+  "autocmd FileType dart nnoremap <Space>fr :FlutterHotReload<cr>
   autocmd FileType dart nnoremap <Space>fR :FlutterHotRestart<cr>
   autocmd FileType dart nnoremap <Space>fd :FlutterDevices<cr>
 augroup END
