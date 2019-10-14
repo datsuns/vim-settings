@@ -11,7 +11,7 @@ execute "source " . g:my_home_directory . "/map.vim"
 execute "source " . g:my_home_directory . "/style.vim"
 " should source from _gvimrc
 "if has("gui_running")
-"	execute "source " . g:my_home_directory . "/gui.vim"
+execute "source " . g:my_home_directory . "/gui.vim"
 "endif
 
 colorscheme my_color

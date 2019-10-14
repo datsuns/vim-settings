@@ -4,9 +4,9 @@ if has("win32")
   set guioptions+=C
   autocmd GUIEnter * simalt ~x
 else
-  set fuoptions=maxvert,maxhorz
+  "set fuoptions=maxvert,maxhorz
   au GUIEnter * set fullscreen
-  set guifont=Osaka−等幅:h24
+  set guifont=Menlo\ Regular:h26
 endif
 set guioptions-=b
 set guioptions-=l
