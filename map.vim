@@ -115,6 +115,7 @@ augroup flutter_vim_maps
   autocmd!
   "autocmd FileType dart nnoremap <Space>fr :FlutterHotReload<cr>
   autocmd FileType dart nnoremap <Space>Fr :FlutterRun<cr>
+  autocmd FileType dart nnoremap <Space>Ff :execute("FlutterRun -d " . expand('<cword>'))<cr>
   autocmd FileType dart nnoremap <Space>FR :FlutterHotRestart<cr>
   autocmd FileType dart nnoremap <Space>Fd :FlutterDevices<cr>
   autocmd FileType dart nnoremap <Space>Fq :FlutterQuit<cr>
