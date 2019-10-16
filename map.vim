@@ -114,9 +114,16 @@ augroup END
 augroup flutter_vim_maps
   autocmd!
   "autocmd FileType dart nnoremap <Space>fr :FlutterHotReload<cr>
-  autocmd FileType dart nnoremap <Space>fr :FlutterRun<cr>
-  autocmd FileType dart nnoremap <Space>fR :FlutterHotRestart<cr>
-  autocmd FileType dart nnoremap <Space>fd :FlutterDevices<cr>
-  autocmd FileType dart nnoremap <Space>fq :FlutterQuit<cr>
+  autocmd FileType dart nnoremap <Space>Fr :FlutterRun<cr>
+  autocmd FileType dart nnoremap <Space>FR :FlutterHotRestart<cr>
+  autocmd FileType dart nnoremap <Space>Fd :FlutterDevices<cr>
+  autocmd FileType dart nnoremap <Space>Fq :FlutterQuit<cr>
+augroup END
+"}}}
+
+"{{{ fzf
+augroup fzf_maps
+  autocmd!
+  nnoremap <silent> <Space>f  :Files .<cr>
 augroup END
 "}}}
