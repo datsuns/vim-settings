@@ -22,4 +22,6 @@ volt get github.com/datsuns/vim-flutter
 volt get github.com/vim-scripts/autoscroll.vim
 volt get github.com/datsuns/vim-go-openimport
 volt get github.com/datsuns/astyle.vim
+volt get github.com/junegunn/fzf
+volt get github.com/junegunn/fzf.vim
 
