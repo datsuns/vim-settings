@@ -3,7 +3,6 @@ execute ":set directory=" . g:my_home_directory . "/swap"
 execute ":set undodir="   . g:my_home_directory . "/undo"
 
 set t_Co=256
-colorscheme my_color
 
 augroup MyFiletypeGroup
 	autocmd!
