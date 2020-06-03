@@ -29,3 +29,6 @@ au BufNewFile,BufRead *.smv   setf smv
 
 " conf
 au BufNewFile,BufRead *.conf		setf apache
+
+" asm
+au BufNewFile,BufRead *.src		setf asm
