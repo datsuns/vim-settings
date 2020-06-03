@@ -26,6 +26,7 @@ set fileencodings+=default
 set fileencodings+=latin1
 
 set fileformat=unix
+set fileformats=unix,dos
 
 set diffopt+=vertical
 
