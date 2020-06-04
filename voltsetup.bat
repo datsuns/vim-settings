@@ -3,7 +3,7 @@ volt profile set my
 volt get github.com/justinmk/vim-dirvish
 rem volt get github.com/Shougo/vimproc.vim
 volt get github.com/itchyny/lightline.vim
-volt get github.com/cespare/vim-toml
+rem volt get github.com/cespare/vim-toml
 volt get github.com/vim-scripts/taglist.vim
 volt get github.com/vim-scripts/gtags.vim
 volt get github.com/vim-jp/cpp-vim
@@ -24,4 +24,11 @@ volt get github.com/datsuns/vim-go-openimport
 volt get github.com/datsuns/astyle.vim
 volt get github.com/junegunn/fzf
 volt get github.com/junegunn/fzf.vim
+volt get github.com/prabirshrestha/vim-lsp
+volt get github.com/prabirshrestha/async.vim
+volt get github.com/prabirshrestha/asyncomplete.vim
+volt get github.com/prabirshrestha/asyncomplete-lsp.vim
+volt get github.com/mattn/vim-lsp-settings
+
+
 
