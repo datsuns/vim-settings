@@ -30,5 +30,3 @@ volt get github.com/prabirshrestha/asyncomplete.vim
 volt get github.com/prabirshrestha/asyncomplete-lsp.vim
 volt get github.com/mattn/vim-lsp-settings
 
-
-
