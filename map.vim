@@ -1,6 +1,6 @@
 "let mapleader = "¥"
 
-map <C-t>n :tabnew<CR>
+map <Space>n :tabnew<CR>
 map <C-h> :tabprevious<CR>
 map <C-l> :tabnext<CR>
 
