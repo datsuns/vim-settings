@@ -13,6 +13,7 @@ nmap gf gF
 nnoremap <silent> <Space>gf  :tabedit <C-r><C-F><CR>
 noremap  <Space>y "*y<CR>
 noremap  <Space>Y "*Y<CR>
+noremap  <Space>p "*p<CR>
 
 noremap <silent> <Space>ev :edit ~/.vim<CR>
 noremap <silent> <Space>ec :edit ~/.vim/colors<CR>
