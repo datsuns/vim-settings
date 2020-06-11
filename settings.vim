@@ -235,6 +235,9 @@ set pyxversion=3
 let g:lightline = {
       \ 'colorscheme': 'OldHope',
       \ }
+let g:lightline.tab = {
+    \ 'active': [ 'filename', 'modified' ],
+    \ 'inactive': [ 'filename', 'modified' ] }
 "}}}
 
 "{{{deoplete
