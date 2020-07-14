@@ -19,6 +19,7 @@ volt get github.com/dart-lang/dart-vim-plugin
 volt get github.com/junegunn/fzf
 volt get github.com/junegunn/fzf.vim
 volt get github.com/PProvost/vim-ps1
+volt get github.com/mattn/vim-lsp-settings
 
 volt get github.com/datsuns/vim-go-openimport
 volt get github.com/datsuns/astyle.vim
