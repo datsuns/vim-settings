@@ -19,8 +19,8 @@ set guioptions-=T
 set guioptions+=R
 
 function! GuiTabLabel()
-    "return fnamemodify(bufname(winbufnr(1)), ":t")
-    return bufname("%")
+    return fnamemodify(bufname(winbufnr(1)), ":t")
+    "return bufname("%")
 endfunction
 set guitablabel=%{GuiTabLabel()}
 
