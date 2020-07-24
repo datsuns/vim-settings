@@ -29,3 +29,6 @@ au BufNewFile,BufRead *.smv   setf smv
 
 " conf
 au BufNewFile,BufRead *.conf		setf apache
+
+" 
+autocmd FileType vue syntax sync fromstart
