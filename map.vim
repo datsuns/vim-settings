@@ -36,29 +36,25 @@ noremap <silent> <C-p> :cp<CR>
 
 
 "{{{ git
-let g:git_no_map_default = 1
+"let g:git_no_map_default = 1
 "nnoremap <Space>gd :GitDiff<Enter>
 "nnoremap <Space>gD :GitDiff --cached<Enter>
 "nnoremap <Space>gs :GitStatus<Enter>
-nnoremap <Space>gl :GitLog<Enter>
-nnoremap <Space>ga :GitAdd<Enter>
-nnoremap <Space>gA :GitAdd <cfile><Enter>
+"nnoremap <Space>gl :GitLog<Enter>
+"nnoremap <Space>ga :GitAdd<Enter>
+"nnoremap <Space>gA :GitAdd <cfile><Enter>
 "nnoremap <Space>gc :GitCommit <Enter>
 "nnoremap <Space>gp :GitPullRebase<Enter>
-nnoremap <Space>gb :GitBlame<Enter>
-nnoremap <Space>gV :Gitv --all<CR>
-augroup gitv
-  autocmd!
-  autocmd FileType gitv nnoremap <silent><buffer> C :<C-u>Git checkout <C-r><C-w><CR>
-  autocmd FileType gitv nnoremap <buffer> <silent> q :close<CR>
-augroup END
+"nnoremap <Space>gb :GitBlame<Enter>
+"nnoremap <Space>gV :Gitv --all<CR>
 "}}}
 
 
 "{{{ fugitive
+nnoremap <Space>ga :Git add %<Enter>
 nnoremap <Space>gs :Gstatus<Enter>
-nnoremap <Space>gd :Gdiff<Enter>
-nnoremap <Space>gc :Gcommit -v <Enter>
+nnoremap <Space>gd :Gdiffsplit<Enter>
+nnoremap <Space>gc :Git commit -v <Enter>
 "}}}
 
 
