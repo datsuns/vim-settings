@@ -262,7 +262,7 @@ let g:previm_show_header = 0
 "}}}
 
 "{{{vim-flutter
-  let g:flutter_show_log_always_tab=1
+  let g:flutter_show_log_always_tab=0
   let g:flutter_use_last_run_option=1
   let g:flutter_default_output_tab_num=0
 "}}}
