@@ -96,8 +96,6 @@ nnoremap <Space>tl :Tlist<CR>
 augroup my_dirvish_events
   autocmd!
     let g:dirvish_relative_paths = 0
-    " Enable fugitive.vim in Dirvish buffers.
-    autocmd FileType dirvish call fugitive#detect(@%)
 
     autocmd FileType dirvish map <buffer> u <Plug>(dirvish_up)
     autocmd FileType dirvish map <buffer> l i
