@@ -14,6 +14,7 @@ set nocursorline
 set matchtime=2
 set cmdheight=1
 set showcmd
+set belloff=all
 
 set ambiwidth=double
 
