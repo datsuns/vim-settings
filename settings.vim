@@ -216,17 +216,6 @@ let g:metaraw_svn_repository_list = {
       \}
 "}}}
 
-"{{{deoplete
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#complete_method = "omni"
-let g:deoplete#enable_yarp = 1
-let g:deoplete#sources     = {}
-let g:deoplete#sources._   = ['buffer']
-let g:deoplete#sources.c   = ['buffer', 'tag']
-let g:deoplete#sources.cpp = ['buffer', 'tag']
-
-"}}}
-
 "{{{for python
 set pyxversion=3
 "}}}
@@ -241,6 +230,13 @@ let g:lightline.tab = {
 "}}}
 
 "{{{deoplete
+"let g:deoplete#enable_at_startup = 1
+"let g:deoplete#complete_method = "omni"
+"let g:deoplete#enable_yarp = 1
+"let g:deoplete#sources     = {}
+"let g:deoplete#sources._   = ['buffer']
+"let g:deoplete#sources.c   = ['buffer', 'tag']
+"let g:deoplete#sources.cpp = ['buffer', 'tag']
 "let g:deoplete#enable_at_startup = 1
 "let g:deoplete#enable_smart_case = 1
 "inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
