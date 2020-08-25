@@ -1,3 +1,5 @@
+colorscheme my_color
+
 if has("win32")
   set guifont=MyricaM_M:h22:cSHIFTJIS:qDRAFT
   set renderoptions=type:directx
