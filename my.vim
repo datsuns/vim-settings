@@ -1,6 +1,6 @@
-let g:my_home_directory = "$HOME/.vim"
+let g:my_home_directory = expand("$HOME") . "/.vim"
 if has("win32")
-  let g:my_home_directory = "$HOME/vimfiles"
+  let g:my_home_directory = expand("$HOME") . "/vimfiles"
 endif
 
 set encoding=utf-8

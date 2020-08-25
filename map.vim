@@ -14,6 +14,7 @@ nnoremap <silent> <Space>gf  :tabedit <C-r><C-F><CR>
 noremap  <Space>y "*y<CR>
 noremap  <Space>Y "*Y<CR>
 noremap  <Space>p "*p<CR>
+nnoremap <Space>cs    :nohlsearch<CR>
 
 noremap <silent> <Space>ev :edit ~/.vim<CR>
 noremap <silent> <Space>ec :edit ~/.vim/colors<CR>
@@ -98,6 +99,7 @@ augroup my_dirvish_events
     autocmd FileType dirvish map <buffer> h <Plug>(dirvish_up)
     autocmd FileType dirvish map <buffer> e <CR>
     autocmd FileType dirvish map <buffer> gc :execute 'lcd ' fnameescape(expand('%:p:h'))<CR>
+    autocmd FileType dirvish silent! unmap -
 
     " Map `gh` to hide dot-prefixed files.  Press `R` to "toggle" (reload).
     autocmd FileType dirvish nnoremap <silent><buffer>
@@ -109,11 +111,11 @@ augroup END
 augroup flutter_vim_maps
   autocmd!
   "autocmd FileType dart nnoremap <Space>fr :FlutterHotReload<cr>
-  autocmd FileType dart nnoremap <Space>Fr :FlutterRun<cr>
-  autocmd FileType dart nnoremap <Space>Ff :execute("FlutterRun -d " . expand('<cword>'))<cr>
-  autocmd FileType dart nnoremap <Space>FR :FlutterHotRestart<cr>
-  autocmd FileType dart nnoremap <Space>Fd :FlutterDevices<cr>
-  autocmd FileType dart nnoremap <Space>Fq :FlutterQuit<cr>
+  autocmd FileType dart nnoremap <Space>lr :FlutterRun<cr>
+  autocmd FileType dart nnoremap <Space>lf :execute("FlutterRun -d " . expand('<cword>'))<cr>
+  autocmd FileType dart nnoremap <Space>lR :FlutterHotRestart<cr>
+  autocmd FileType dart nnoremap <Space>ld :FlutterDevices<cr>
+  autocmd FileType dart nnoremap <Space>lq :FlutterQuit<cr>
 augroup END
 "}}}
 

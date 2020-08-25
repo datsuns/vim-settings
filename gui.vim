@@ -25,4 +25,3 @@ endfunction
 set guitablabel=%{GuiTabLabel()}
 
 noremap <silent> <F12> :set guifont=*<CR>
-colorscheme my_color
