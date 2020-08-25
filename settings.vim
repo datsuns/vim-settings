@@ -33,7 +33,7 @@ let g:quickrun_config['coffee.vows'] = {'command': 'vows', 'args': '--spec',
 "}}}
 
 "{{{vimtest
-let g:vimtest_config = {}
+"let g:vimtest_config = {}
 "}}}
 
 "{{{scala
