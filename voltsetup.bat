@@ -23,6 +23,7 @@ volt get github.com/mattn/vim-lsp-settings
 volt get github.com/mattn/vim-lsp-icons
 volt get github.com/hrsh7th/vim-vsnip
 volt get github.com/hrsh7th/vim-vsnip-integ
+volt get https://github.com/ziglang/zig.vim
 
 volt get github.com/datsuns/vim-go-openimport
 volt get github.com/datsuns/astyle.vim
