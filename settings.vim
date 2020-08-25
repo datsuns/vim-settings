@@ -241,9 +241,9 @@ let g:lightline.tab = {
 "}}}
 
 "{{{deoplete
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_smart_case = 1
-inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
+"let g:deoplete#enable_at_startup = 1
+"let g:deoplete#enable_smart_case = 1
+"inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
 "}}}
 
 "{{{clang_complete
