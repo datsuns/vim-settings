@@ -37,44 +37,44 @@ let g:quickrun_config['coffee.vows'] = {'command': 'vows', 'args': '--spec',
 "}}}
 
 "{{{scala
-function! s:my_start_sbt()
-  execute 'VimShellInteractive sbt'
-  stopinsert
-  let t:sbt_bufname = bufname('%')
-  if !has_key(t:, 'sbt_cmds')
-    "let t:sbt_cmds = [input('t:sbt_cmds[0] = ')]
-    let t:sbt_cmds = ['compile']
-  endif
-  wincmd p
-endfunction
-
-command! -nargs=0 StartSBT call <SID>my_start_sbt()
-
-function! s:sbt_run(additional_cmd)
-  let cmds = get(t:, 'sbt_cmds', 'run')
-  if a:additional_cmd != ''
-    let cmds = cmds + [a:additional_cmd]
-  endif
-
-  let sbt_bufname = get(t:, 'sbt_bufname')
-  if sbt_bufname !=# ''
-    call vimshell#interactive#set_send_buffer(sbt_bufname)
-    call vimshell#interactive#send(cmds)
-  else
-    echoerr 'try StartSBT'
-  endif
-endfunction
-
-function! s:vimrc_scala()
-  nnoremap <buffer> <Space>m :<C-u>write<Cr>:call <SID>sbt_run('')<Cr>
-  nnoremap <buffer> <Space>M :<C-u>write<Cr>:call <SID>sbt_run('run')<Cr>
-endfunction
-
-augroup vimrc_scala
-  autocmd!
-  autocmd FileType scala call s:vimrc_scala()
-  autocmd FileType scala nnoremap <buffer> <Space>st :<C-u>StartSBT
-augroup END
+"function! s:my_start_sbt()
+"  execute 'VimShellInteractive sbt'
+"  stopinsert
+"  let t:sbt_bufname = bufname('%')
+"  if !has_key(t:, 'sbt_cmds')
+"    "let t:sbt_cmds = [input('t:sbt_cmds[0] = ')]
+"    let t:sbt_cmds = ['compile']
+"  endif
+"  wincmd p
+"endfunction
+"
+"command! -nargs=0 StartSBT call <SID>my_start_sbt()
+"
+"function! s:sbt_run(additional_cmd)
+"  let cmds = get(t:, 'sbt_cmds', 'run')
+"  if a:additional_cmd != ''
+"    let cmds = cmds + [a:additional_cmd]
+"  endif
+"
+"  let sbt_bufname = get(t:, 'sbt_bufname')
+"  if sbt_bufname !=# ''
+"    call vimshell#interactive#set_send_buffer(sbt_bufname)
+"    call vimshell#interactive#send(cmds)
+"  else
+"    echoerr 'try StartSBT'
+"  endif
+"endfunction
+"
+"function! s:vimrc_scala()
+"  nnoremap <buffer> <Space>m :<C-u>write<Cr>:call <SID>sbt_run('')<Cr>
+"  nnoremap <buffer> <Space>M :<C-u>write<Cr>:call <SID>sbt_run('run')<Cr>
+"endfunction
+"
+"augroup vimrc_scala
+"  autocmd!
+"  autocmd FileType scala call s:vimrc_scala()
+"  autocmd FileType scala nnoremap <buffer> <Space>st :<C-u>StartSBT
+"augroup END
 "}}}
 
 "vimfiler{{{
