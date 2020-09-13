@@ -119,10 +119,17 @@ let g:Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
 " to enable :GoDef etc.
 autocmd FileType go filetype plugin indent on
 " customized mapping
-autocmd FileType go nnoremap <buffer> <silent> <Space><C-]> :<C-u>call go#def#Jump("tab")<CR>
+"autocmd FileType go nnoremap <buffer> <silent> <Space><C-]> :<C-u>call go#def#Jump("tab")<CR>
 
-let g:go_fmt_autosave = 1
+"let g:go_fmt_autosave = 1
 "}}}
+
+"{{{mattn/vim-goimports
+  let g:goimports = 1
+  let g:goimports_simplify = 0
+"}}}
+
+
 "}}}
 
 "{{{vim-metarw-svn
