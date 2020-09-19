@@ -32,50 +32,6 @@ let g:quickrun_config['coffee.vows'] = {'command': 'vows', 'args': '--spec',
         \ }
 "}}}
 
-"{{{vimtest
-"let g:vimtest_config = {}
-"}}}
-
-"{{{scala
-"function! s:my_start_sbt()
-"  execute 'VimShellInteractive sbt'
-"  stopinsert
-"  let t:sbt_bufname = bufname('%')
-"  if !has_key(t:, 'sbt_cmds')
-"    "let t:sbt_cmds = [input('t:sbt_cmds[0] = ')]
-"    let t:sbt_cmds = ['compile']
-"  endif
-"  wincmd p
-"endfunction
-"
-"command! -nargs=0 StartSBT call <SID>my_start_sbt()
-"
-"function! s:sbt_run(additional_cmd)
-"  let cmds = get(t:, 'sbt_cmds', 'run')
-"  if a:additional_cmd != ''
-"    let cmds = cmds + [a:additional_cmd]
-"  endif
-"
-"  let sbt_bufname = get(t:, 'sbt_bufname')
-"  if sbt_bufname !=# ''
-"    call vimshell#interactive#set_send_buffer(sbt_bufname)
-"    call vimshell#interactive#send(cmds)
-"  else
-"    echoerr 'try StartSBT'
-"  endif
-"endfunction
-"
-"function! s:vimrc_scala()
-"  nnoremap <buffer> <Space>m :<C-u>write<Cr>:call <SID>sbt_run('')<Cr>
-"  nnoremap <buffer> <Space>M :<C-u>write<Cr>:call <SID>sbt_run('run')<Cr>
-"endfunction
-"
-"augroup vimrc_scala
-"  autocmd!
-"  autocmd FileType scala call s:vimrc_scala()
-"  autocmd FileType scala nnoremap <buffer> <Space>st :<C-u>StartSBT
-"augroup END
-"}}}
 
 "vimfiler{{{
 let g:vimfiler_as_default_explorer = 1
@@ -87,12 +43,6 @@ autocmd FileType vimfiler nmap <buffer> <F5>  <Plug>(vimfiler_redraw_screen)
 "gitv{{{
 let g:Gitv_OpenPreviewOnLaunch = 0
 "}}}
-
-""airline{{{
-"  "let g:airline#extensions#whitespace#enabled = 1
-"  "nnoremap <buffer> <Space>at :AirlineToggle<Cr>
-"  let g:airline#extensions#branch#enabled = 0
-""}}}
 
 
 "javascript indenter{{{
@@ -115,20 +65,11 @@ let g:Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
 "}}}
 
 "{{{golang
-"{{{vim-go
-" to enable :GoDef etc.
-autocmd FileType go filetype plugin indent on
-" customized mapping
-"autocmd FileType go nnoremap <buffer> <silent> <Space><C-]> :<C-u>call go#def#Jump("tab")<CR>
-
-"let g:go_fmt_autosave = 1
-"}}}
 
 "{{{mattn/vim-goimports
   let g:goimports = 1
   let g:goimports_simplify = 0
 "}}}
-
 
 "}}}
 
@@ -149,22 +90,6 @@ let g:lightline = {
 let g:lightline.tab = {
     \ 'active': [ 'filename', 'modified' ],
     \ 'inactive': [ 'filename', 'modified' ] }
-"}}}
-
-"{{{deoplete
-"let g:deoplete#enable_at_startup = 1
-"let g:deoplete#complete_method = "omni"
-"let g:deoplete#enable_yarp = 1
-"let g:deoplete#sources     = {}
-"let g:deoplete#sources._   = ['buffer']
-"let g:deoplete#sources.c   = ['buffer', 'tag']
-"let g:deoplete#sources.cpp = ['buffer', 'tag']
-"let g:deoplete#enable_at_startup = 1
-"let g:deoplete#enable_smart_case = 1
-"inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
-"}}}
-
-"{{{clang_complete
 "}}}
 
 
