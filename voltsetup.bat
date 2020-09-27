@@ -1,6 +1,5 @@
 volt profile set my
 
-volt get github.com/justinmk/vim-dirvish
 volt get github.com/itchyny/lightline.vim
 volt get github.com/vim-scripts/taglist.vim
 volt get github.com/vim-scripts/gtags.vim
@@ -22,14 +21,17 @@ volt get github.com/prabirshrestha/vim-lsp
 volt get github.com/mattn/vim-lsp-settings
 volt get github.com/mattn/vim-lsp-icons
 volt get github.com/mattn/vim-goimports
+volt get github.com/mattn/vim-molder
 volt get github.com/hrsh7th/vim-vsnip
 volt get github.com/hrsh7th/vim-vsnip-integ
 volt get https://github.com/ziglang/zig.vim
+volt get https://github.com/udalov/kotlin-vim
 
 volt get github.com/datsuns/vim-go-openimport
 volt get github.com/datsuns/astyle.vim
 volt get github.com/datsuns/vim-flutter
 
+rem volt get github.com/justinmk/vim-dirvish
 rem volt get github.com/fatih/vim-go
 rem volt get github.com/Shougo/vimproc.vim
 rem volt get github.com/cespare/vim-toml
