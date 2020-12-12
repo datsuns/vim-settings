@@ -121,4 +121,7 @@ augroup MyDartSetting
 augroup END
 "}}}
 
+"{{{molder
+  let g:molder_show_hidden = 1
+"}}}
 
