@@ -125,3 +125,7 @@ augroup END
   let g:molder_show_hidden = 1
 "}}}
 
+"{{{ mml
+  let g:mml#ppmck_location = expand('$HOME/tools/nsf/ppmck09a/mck')
+  let g:mml#nsf2wav_command = expand('$HOME/tools/nsf/nsf2wav/nsf2wav')
+"}}}
