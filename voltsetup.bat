@@ -30,6 +30,8 @@ volt get https://github.com/udalov/kotlin-vim
 volt get github.com/datsuns/vim-go-openimport
 volt get github.com/datsuns/astyle.vim
 volt get github.com/datsuns/vim-flutter
+volt get github.com/datsuns/vim-mml
+
 
 rem volt get github.com/justinmk/vim-dirvish
 rem volt get github.com/fatih/vim-go
