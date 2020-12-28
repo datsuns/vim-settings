@@ -127,7 +127,6 @@ augroup END
 
 "{{{ mml
   let g:mml#ppmck_location = expand('$HOME/tools/nsf/ppmck09a/mck')
-  let g:mml#nsf2wav_command = expand('$HOME/tools/nsf/nsf2wav/nsf2wav')
   autocmd FileType mml nmap <buffer> <Space>r :PlayMml<CR>
   autocmd FileType mml nmap <buffer> <Space>q :StopMml<CR>
 "}}}
