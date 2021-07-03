@@ -19,14 +19,13 @@ let g:quickrun_config = {}
 let g:quickrun_config['_'] = {
       \ 'outputter/buffer/split': 'split',
       \ 'runner' : 'job',
-      \ 'runner/vimproc/updatetime' : 60,
       \ 'outputter/buffer/into': '1'
       \}
 let g:quickrun_config['ruby.rspec'] = {'command': 'rspec', 'args': '-fd --color'}
 let g:quickrun_config['ruby.unittest'] = {'command': 'rake', 'args': 'test:units'}
 let g:quickrun_config['markdown'] = {'outputter': 'browser' }
 let g:quickrun_config['cpp'] = { 'command': 'g++', 'cmdopt': '-std=c++11' }
-let g:quickrun_config['c'] = { 'command': 'gcc', 'cmdopt': '-std=c++11' }
+let g:quickrun_config['c'] = { 'command': 'gcc', 'cmdopt': '-std=c11' }
 let g:quickrun_config['coffee.vows'] = {'command': 'vows', 'args': '--spec',
         \ 'hook/coffee_vows_filter/enable': 1,
         \ }

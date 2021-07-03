@@ -62,6 +62,7 @@ nnoremap <Space>gc :Git commit -v <Enter>
 "{{{ quickrun
 let g:quickrun_no_default_key_mappings=1
 silent! map <unique> <Space>r <Plug>(quickrun)
+autocmd FileType quickrun nnoremap q :q<cr>
 "}}}
 
 
