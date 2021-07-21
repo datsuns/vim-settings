@@ -19,17 +19,18 @@ Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
-Plug 'mattn/vim-lsp-icons'
+"Plug 'mattn/vim-lsp-icons'
 Plug 'mattn/vim-goimports', { 'for': 'go' }
 Plug 'mattn/vim-molder'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
+Plug 'cespare/vim-toml', { 'for': 'toml' }
 "Plug 'ziglang/zig.vim', { 'for': 'zig' }
 "Plug 'udalov/kotlin-vim', { 'for': 'kotlin' }
 
-Plug 'datsuns/vim-go-openimport', { 'for': 'go' }
-Plug 'datsuns/astyle.vim'
-Plug 'datsuns/vim-flutter', { 'branch': 'feature/merge_windows_job_error', 'for': 'flutter' } 
+"Plug 'datsuns/vim-go-openimport', { 'for': 'go' }
+"Plug 'datsuns/astyle.vim'
+Plug 'datsuns/vim-flutter', { 'branch': 'feature/merge_windows_job_error', 'for': 'dart' } 
 Plug 'datsuns/vim-mml', { 'for': 'mml' } 
 Plug 'datsuns/vim-mml-play', { 'for': 'mml' } 
 
