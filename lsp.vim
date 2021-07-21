@@ -23,5 +23,10 @@ let g:asyncomplete_auto_completeopt = 0
 let g:asyncomplete_popup_delay = 200
 let g:lsp_text_edit_enabled = 1
 
+augroup MyLspAutoCommand
+	autocmd!
+  autocmd BufWritePre *.go   :execute("LspDocumentFormatSync")
+augroup END
+
 "let lsp_log_verbose=1
 "let lsp_log_file = expand('~/lsp.log')
