@@ -53,7 +53,7 @@ noremap <silent> <C-p> :cp<CR>
 
 "{{{ fugitive
 nnoremap <Space>ga :Git add %<Enter>
-nnoremap <Space>gs :Gstatus<Enter>
+nnoremap <Space>gs :Git<Enter>
 nnoremap <Space>gd :Gdiffsplit<Enter>
 nnoremap <Space>gc :Git commit -v <Enter>
 "}}}
