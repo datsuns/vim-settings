@@ -33,5 +33,6 @@ Plug 'cespare/vim-toml', { 'for': 'toml' }
 Plug 'datsuns/vim-flutter', { 'branch': 'feature/merge_windows_job_error', 'for': 'dart' } 
 Plug 'datsuns/vim-mml', { 'for': 'mml' } 
 Plug 'datsuns/vim-mml-play', { 'for': 'mml' } 
+Plug 'datsuns/vim-svn-explorer'
 
 call plug#end()
