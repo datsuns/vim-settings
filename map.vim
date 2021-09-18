@@ -56,6 +56,7 @@ nnoremap <Space>ga :Git add %<Enter>
 nnoremap <Space>gs :Git<Enter>
 nnoremap <Space>gd :Gdiffsplit<Enter>
 nnoremap <Space>gc :Git commit -v <Enter>
+autocmd FileType fugitive nnoremap q gq
 "}}}
 
 
