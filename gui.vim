@@ -27,3 +27,5 @@ endfunction
 set guitablabel=%{GuiTabLabel()}
 
 noremap <silent> <F12> :set guifont=*<CR>
+noremap <silent> <F11> :set guioptions+=C<CR>
+noremap <silent> <F10> :set guioptions-=C<CR>
