@@ -14,6 +14,8 @@ Plug 'dart-lang/dart-vim-plugin', { 'for': 'dart' }
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'PProvost/vim-ps1', { 'for': 'ps1' }
+Plug 'posva/vim-vue', { 'for': 'vue' } 
+
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
