@@ -130,3 +130,8 @@ augroup END
   autocmd FileType mml nmap <buffer> <Space>r :PlayMml<CR>
   autocmd FileType mml nmap <buffer> <Space>q :StopMml<CR>
 "}}}
+
+"{{{ go-delv (go-debugger)
+ let g:delve_cache_path = g:my_home_directory . "/cache/go-delv"
+
+"}}}

@@ -135,3 +135,9 @@ augroup END
   autocmd FileType molder map <buffer> h <Plug>(molder-up)
   autocmd FileType molder map <buffer> <F5> <Plug>(molder-reload)
 "}}}
+
+"{{{ go:delve
+autocmd FileType go nnoremap <buffer> <F5> :DlvDebug<cr>
+autocmd FileType go nnoremap <buffer> <F6> :DlvToggleBreakpoint<cr>
+autocmd FileType go nnoremap <buffer> <F7> :DlvToggleTracepoint<cr>
+"}}}
