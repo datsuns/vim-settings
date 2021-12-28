@@ -16,29 +16,31 @@ let g:colors_name = "my_color"
 " GUI Comment : #80a0ff = Light blue
 
 " GUI
-highlight Normal     guifg=white	guibg=Black
-highlight Search     guifg=white	guibg=blue	gui=bold
-highlight Visual					gui=reverse
-highlight Cursor     guifg=Black	guibg=Green	gui=bold
-highlight Special    guifg=Orange
-highlight Comment    guifg=green	gui=bold
-highlight StatusLine guifg=blue		guibg=white
-highlight Statement  guifg=Yellow			gui=NONE
-highlight Type			guifg=DodgerBlue gui=bold
-highlight Conditional	guifg=DodgerBlue gui=bold
-highlight Statement	guifg=DodgerBlue gui=bold
-highlight Repeat		guifg=DodgerBlue gui=bold
-highlight Operator		guifg=DodgerBlue gui=bold
-highlight Label			guifg=DodgerBlue gui=bold
-highlight StorageClass guifg=cyan gui=bold
-highlight Structure	guifg=cyan gui=bold
-highlight String		guifg=red
-highlight Character		guifg=red
-highlight PreProc		guifg=cyan gui=bold
-highlight Number		guifg=lightred
-highlight WarningMsg	guifg=red
-highlight TabLineSel	guifg=red
-highlight CursorLine	guibg=#333333
+if has("gui_running")
+  highlight Normal     guifg=white	guibg=Black
+  highlight Search     guifg=white	guibg=blue	gui=bold
+  highlight Visual					gui=reverse
+  highlight Cursor     guifg=Black	guibg=Green	gui=bold
+  highlight Special    guifg=Orange
+  highlight Comment    guifg=green	gui=bold
+  highlight StatusLine guifg=blue		guibg=white
+  highlight Statement  guifg=Yellow			gui=NONE
+  highlight Type			guifg=DodgerBlue gui=bold
+  highlight Conditional	guifg=DodgerBlue gui=bold
+  highlight Statement	guifg=DodgerBlue gui=bold
+  highlight Repeat		guifg=DodgerBlue gui=bold
+  highlight Operator		guifg=DodgerBlue gui=bold
+  highlight Label			guifg=DodgerBlue gui=bold
+  highlight StorageClass guifg=cyan gui=bold
+  highlight Structure	guifg=cyan gui=bold
+  highlight String		guifg=red
+  highlight Character		guifg=red
+  highlight PreProc		guifg=cyan gui=bold
+  highlight Number		guifg=lightred
+  highlight WarningMsg	guifg=red
+  highlight TabLineSel	guifg=red
+  highlight CursorLine	guibg=#333333
+endif
 
 " Console
 highlight Normal     ctermfg=white		ctermbg=Black
