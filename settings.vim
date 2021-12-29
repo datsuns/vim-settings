@@ -13,6 +13,10 @@ augroup MyFiletypeGroup
 	"autocmd BufWinEnter,BufNewFile *_spec.coffee set filetype=coffee.vows
 augroup END
 
+"{{{ vimHint
+  augroup vimHints | exe 'au!' | augroup END
+"}}}
+
 "{{{quickrun
 let g:quickrun_config = {}
 "let g:quickrun_config['_'] = {'outputter/buffer/split': 'split', 'outputter/buffer/into': '1', 'runner' : 'vimproc' }
