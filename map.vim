@@ -16,13 +16,9 @@ noremap  <Space>Y "*Y<CR>
 noremap  <Space>p "*p<CR>
 nnoremap <Space>cs    :nohlsearch<CR>
 
-noremap <silent> <Space>ev :edit ~/.vim<CR>
-noremap <silent> <Space>ec :edit ~/.vim/colors<CR>
-"noremap <silent> <Space>lv :source ~/.vimrc<CR>
+"noremap <silent> <Space>ev :edit ~/.vim<CR>
 noremap <silent> <Space>ed :edit ~/Desktop<CR>
 noremap <silent> <Space>ew :edit ~/work<CR>
-
-"noremap <F10> :edit ~/work/memo/task_memo.changelog<CR>
 
 noremap <silent> <Space>co :copen<CR>
 noremap <silent> <Space>cc :cclose<CR>
@@ -34,22 +30,6 @@ noremap <silent> <C-p> :cp<CR>
 "noremap <silent> <Space>iu :!ino upload<CR>
 "noremap <silent> <Space>is :!ino serial<CR>
 "}}}
-
-
-"{{{ git
-"let g:git_no_map_default = 1
-"nnoremap <Space>gd :GitDiff<Enter>
-"nnoremap <Space>gD :GitDiff --cached<Enter>
-"nnoremap <Space>gs :GitStatus<Enter>
-"nnoremap <Space>gl :GitLog<Enter>
-"nnoremap <Space>ga :GitAdd<Enter>
-"nnoremap <Space>gA :GitAdd <cfile><Enter>
-"nnoremap <Space>gc :GitCommit <Enter>
-"nnoremap <Space>gp :GitPullRebase<Enter>
-"nnoremap <Space>gb :GitBlame<Enter>
-"nnoremap <Space>gV :Gitv --all<CR>
-"}}}
-
 
 "{{{ fugitive
 nnoremap <Space>ga :Git add %<Enter>
