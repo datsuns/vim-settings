@@ -39,14 +39,8 @@ let g:quickrun_config['coffee.vows'] = {'command': 'vows', 'args': '--spec',
 
 
 "javascript indenter{{{
-" この設定入れるとshiftwidthを1にしてインデントしてくれる
 let g:SimpleJsIndenter_BriefMode = 2
-" この設定入れるとswitchのインデントがいくらかマシに
 let g:SimpleJsIndenter_CaseIndentLevel = -1
-"}}}
-
-"clever-f{{{
-let g:clever_f_use_migemo=1
 "}}}
 
 "white space tailing{{{
