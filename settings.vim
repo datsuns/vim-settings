@@ -37,10 +37,6 @@ let g:quickrun_config['coffee.vows'] = {'command': 'vows', 'args': '--spec',
         \ }
 "}}}
 
-"gitv{{{
-let g:Gitv_OpenPreviewOnLaunch = 0
-"}}}
-
 
 "javascript indenter{{{
 " この設定入れるとshiftwidthを1にしてインデントしてくれる
