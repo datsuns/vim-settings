@@ -13,8 +13,12 @@ augroup MyFiletypeGroup
 	"autocmd BufWinEnter,BufNewFile *_spec.coffee set filetype=coffee.vows
 augroup END
 
-"{{{ vimHint
-  augroup vimHints | exe 'au!' | augroup END
+"{{{ skipping default loading
+  let g:skip_defaults_vim  = 1
+  let g:loaded_gzip        = 1
+  let g:loaded_netrwPlugin = 1
+  let g:loaded_tarPlugin   = 1
+  let g:loaded_zipPlugin   = 1
 "}}}
 
 "{{{quickrun
