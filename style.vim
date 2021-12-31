@@ -16,6 +16,7 @@ set cmdheight=1
 set showcmd
 set belloff=all
 
+
 set ambiwidth=double
 
 set cursorline
@@ -44,3 +45,7 @@ else
 endif
 set foldmethod=marker
 
+" from $VIMRUNTIME/defaults.vim
+set backspace=indent,eol,start
+set noruler
+set nrformats-=octal
