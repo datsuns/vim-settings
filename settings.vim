@@ -10,7 +10,6 @@ augroup MyFiletypeGroup
   autocmd BufWinEnter,BufNewFile *spec_helper.rb set filetype=ruby.rspec
 	autocmd BufWinEnter,BufNewFile *_test.rb set filetype=ruby.unittest
 	"autocmd BufWritePost,FileWritePost *_test.vim VimTest
-	"autocmd BufWinEnter,BufNewFile *_spec.coffee set filetype=coffee.vows
 augroup END
 
 "{{{ skipping default loading
@@ -23,7 +22,6 @@ augroup END
 
 "{{{quickrun
 let g:quickrun_config = {}
-"let g:quickrun_config['_'] = {'outputter/buffer/split': 'split', 'outputter/buffer/into': '1', 'runner' : 'vimproc' }
 let g:quickrun_config['_'] = {
       \ 'outputter/buffer/split': 'split',
       \ 'runner' : 'job',
@@ -37,14 +35,6 @@ let g:quickrun_config['c'] = { 'command': 'gcc', 'cmdopt': '-std=c11' }
 let g:quickrun_config['coffee.vows'] = {'command': 'vows', 'args': '--spec',
         \ 'hook/coffee_vows_filter/enable': 1,
         \ }
-"}}}
-
-
-"vimfiler{{{
-let g:vimfiler_as_default_explorer = 1
-let g:unite_kind_openable_lcd_command = 'lcd'
-autocmd FileType vimfiler nmap <buffer> <C-l> :tabnext<CR>
-autocmd FileType vimfiler nmap <buffer> <F5>  <Plug>(vimfiler_redraw_screen)
 "}}}
 
 "gitv{{{
