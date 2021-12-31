@@ -43,10 +43,6 @@ let g:SimpleJsIndenter_BriefMode = 2
 let g:SimpleJsIndenter_CaseIndentLevel = -1
 "}}}
 
-"white space tailing{{{
-"autocmd FileType c,cpp,java,php,rst,make autocmd BufWritePre <buffer> :%s/\s$//e
-"}}}
-
 "taglist{{{
 let g:Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
 "}}}
