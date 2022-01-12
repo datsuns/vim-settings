@@ -41,6 +41,10 @@ if has("gui_running")
   highlight WarningMsg   guifg=red
   highlight TabLineSel   guifg=red
   highlight CursorLine   guibg=#333333
+  if has('multi_byte_ime')
+     highlight Cursor   guifg=NONE guibg=Green
+     highlight CursorIM guifg=NONE guibg=Purple
+  endif
 endif
 
 " Console
@@ -68,8 +72,12 @@ highlight Operator     ctermfg=cyan
 highlight cppOperator  ctermfg=cyan
 highlight Directory    ctermfg=cyan
 highlight WarningMsg   ctermfg=red
-highlight DiffText     ctermbg=darkred
+highlight DiffText                      ctermbg=darkred
 highlight TabLineSel   ctermfg=red
+if has('multi_byte_ime')
+  highlight Cursor   ctermfg=NONE ctermbg=Green
+  highlight CursorIM ctermfg=NONE ctermbg=magenta
+endif
 
 
 "========= RST ============
