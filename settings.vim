@@ -124,5 +124,6 @@ augroup END
 "  \ 'ctrl-t': 'tab split',
 "  \ 'ctrl-x': 'split',
 "  \ 'ctrl-v': 'vsplit' }
-let g:fzf_layout = { 'window': 'enew'' }
+let g:fzf_layout = { 'window': 'enew' }
+
 "}}}
