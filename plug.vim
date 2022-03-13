@@ -34,8 +34,8 @@ Plug 'mattn/vim-lsp-settings'
 "Plug 'mattn/vim-lsp-icons'
 
 Plug 'mattn/vim-molder'
-Plug 'hrsh7th/vim-vsnip'
-Plug 'hrsh7th/vim-vsnip-integ'
+"Plug 'hrsh7th/vim-vsnip'
+"Plug 'hrsh7th/vim-vsnip-integ'
 "Plug 'ziglang/zig.vim', { 'for': 'zig' }
 "Plug 'udalov/kotlin-vim', { 'for': 'kotlin' }
 
