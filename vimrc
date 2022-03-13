@@ -40,4 +40,9 @@ if has('syntax') && has('eval')
   packadd! matchit
 endif
 
-source ~/.vim/my.vim
+let g:my_home_directory = expand("$HOME") . "/.vim"
+if has("win32")
+  let g:my_home_directory = expand("$HOME") . "/vimfiles"
+endif
+
+execute "source " . g:my_home_directory . "/my.vim"
