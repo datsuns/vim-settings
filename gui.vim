@@ -1,7 +1,7 @@
 colorscheme my_color
 
 if has("win32")
-  set guifont=MyricaM_M:h22:cSHIFTJIS:qDRAFT
+  set guifont=MyricaM_M:h20:cSHIFTJIS:qDRAFT
   set renderoptions=type:directx
   set guioptions+=C
   autocmd GUIEnter * simalt ~x
