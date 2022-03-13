@@ -1,8 +1,3 @@
-let g:my_home_directory = expand("$HOME") . "/.vim"
-if has("win32")
-  let g:my_home_directory = expand("$HOME") . "/vimfiles"
-endif
-
 set encoding=utf-8
 
 execute "source " . g:my_home_directory . "/plug.vim"
