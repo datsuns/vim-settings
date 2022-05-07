@@ -126,5 +126,6 @@ autocmd FileType go nnoremap <buffer> <F7> :DlvToggleTracepoint<cr>
 augroup ctrlp_maps
   autocmd!
   nnoremap <silent> <Space>f  :CtrlP<cr>
+  nnoremap <silent> ,, :CtrlPMRU<cr>
 augroup END
 "}}}
