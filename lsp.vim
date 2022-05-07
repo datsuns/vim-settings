@@ -5,11 +5,14 @@ endif
 function! s:on_lsp_buffer_enabled() abort
   setlocal omnifunc=lsp#complete
   setlocal signcolumn=yes
-  nmap <buffer> gd <plug>(lsp-definition)
+  nmap <buffer> gd <plug>(lsp-peek-definition)
+  nmap <buffer> gD <plug>(lsp-definition)
   nmap <buffer> gr <plug>(lsp-references)
   nmap <buffer> gi <plug>(lsp-implementation))
   nmap <buffer> <f2> <plug>(lsp-rename)
   inoremap <expr> <cr> pumvisible() ? "\<c-y>\<cr>" : "\<cr>"
+  nnoremap <buffer> <expr><c-j> lsp#scroll(+2)
+  nnoremap <buffer> <expr><c-k> lsp#scroll(-2)
 endfunction
 
 augroup lsp_install
