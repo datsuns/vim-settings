@@ -124,6 +124,15 @@ augroup END
 "  \ 'ctrl-t': 'tab split',
 "  \ 'ctrl-x': 'split',
 "  \ 'ctrl-v': 'vsplit' }
-let g:fzf_layout = { 'window': 'enew' }
+"let g:fzf_layout = { 'window': 'enew' }
+"}}}
 
+"{{{ rust
+let g:rustfmt_autosave = 1
+let g:rust_fold = 1
+"}}}
+
+"{{{ ctrlp
+let g:ctrlp_match_func = {'match': 'ctrlp_matchfuzzy#matcher'}
+let g:ctrlp_working_path_mode = 'ra'
 "}}}

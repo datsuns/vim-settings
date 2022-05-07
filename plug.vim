@@ -8,8 +8,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'thinca/vim-quickrun'
 Plug 'previm/previm'
 Plug 'tyru/open-browser.vim'
-Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'mattn/ctrlp-matchfuzzy'
 
 " for *lang
 Plug 'cespare/vim-toml',          { 'for': 'toml' }

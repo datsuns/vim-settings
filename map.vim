@@ -102,10 +102,10 @@ augroup END
 "}}}
 
 "{{{ fzf
-augroup fzf_maps
-  autocmd!
-  nnoremap <silent> <Space>f  :Files .<cr>
-augroup END
+"augroup fzf_maps
+"  autocmd!
+"  nnoremap <silent> <Space>f  :Files .<cr>
+"augroup END
 "}}}
 
 "{{{ molder
@@ -120,4 +120,11 @@ augroup END
 autocmd FileType go nnoremap <buffer> <F5> :DlvDebug<cr>
 autocmd FileType go nnoremap <buffer> <F6> :DlvToggleBreakpoint<cr>
 autocmd FileType go nnoremap <buffer> <F7> :DlvToggleTracepoint<cr>
+"}}}
+
+"{{{ ctrlp
+augroup ctrlp_maps
+  autocmd!
+  nnoremap <silent> <Space>f  :CtrlP<cr>
+augroup END
 "}}}
