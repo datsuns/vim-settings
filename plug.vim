@@ -4,8 +4,10 @@ Plug 'cespare/vim-toml', { 'for': 'toml' }
 Plug 'dart-lang/dart-vim-plugin', { 'for': 'dart' }
 Plug 'itchyny/lightline.vim'
 Plug 'juneedahamed/svnj.vim'
-Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
+"Plug 'junegunn/fzf'
+"Plug 'junegunn/fzf.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'mattn/ctrlp-matchfuzzy'
 Plug 'justinmk/vim-dirvish'
 Plug 'mattn/vim-goimports', { 'for': 'go' }
 Plug 'mattn/vim-lsp-settings'
@@ -29,6 +31,7 @@ Plug 'datsuns/astyle.vim'
 Plug 'datsuns/vim-flutter', { 'branch': 'feature/merge_windows_job_error', 'for': 'dart' }
 Plug 'datsuns/vim-go-openimport'
 Plug 'datsuns/vim-mml'
+Plug 'datsuns/vim-mml-play'
 
 
 call plug#end()

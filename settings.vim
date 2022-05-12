@@ -26,7 +26,7 @@ let g:quickrun_config['ruby.rspec'] = {'command': 'rspec', 'args': '-fd --color'
 let g:quickrun_config['ruby.unittest'] = {'command': 'rake', 'args': 'test:units'}
 let g:quickrun_config['markdown'] = {'outputter': 'browser' }
 let g:quickrun_config['cpp'] = { 'command': 'g++', 'cmdopt': '-std=c++11' }
-let g:quickrun_config['c'] = { 'command': 'gcc', 'cmdopt': '-std=c++11' }
+let g:quickrun_config['c'] = { 'command': 'gcc', }
 let g:quickrun_config['coffee.vows'] = {'command': 'vows', 'args': '--spec',
         \ 'hook/coffee_vows_filter/enable': 1,
         \ }
@@ -303,3 +303,12 @@ let g:asyncomplete_popup_delay = 200
 let g:lsp_text_edit_enabled = 1
 "}}}
 
+"{{{mml-auto
+let g:mml_ppmck_dir = expand('~/tools/nsf/mck')
+let g:mml_nsf2wav_command = expand('~/tools/nsf/nsf2wav/nsf2wav.exe')
+"{{{
+
+"{{{ctrlp
+let g:ctrlp_match_func = {'match': 'ctrlp_matchfuzzy#matcher'}
+let g:ctrlp_working_path_mode = 'ra'
+"}}}

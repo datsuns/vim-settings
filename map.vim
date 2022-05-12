@@ -59,7 +59,7 @@ augroup END
 "{{{ fugitive
 nnoremap <Space>gs :Gstatus<Enter>
 nnoremap <Space>gd :Gdiff<Enter>
-nnoremap <Space>gc :Gcommit -v <Enter>
+nnoremap <Space>gc :Git commit -v <Enter>
 "}}}
 
 
@@ -98,7 +98,6 @@ augroup my_dirvish_events
   autocmd!
     let g:dirvish_relative_paths = 0
     " Enable fugitive.vim in Dirvish buffers.
-    autocmd FileType dirvish call fugitive#detect(@%)
 
     autocmd FileType dirvish map <buffer> u <Plug>(dirvish_up)
     autocmd FileType dirvish map <buffer> l i
@@ -125,9 +124,17 @@ augroup flutter_vim_maps
 augroup END
 "}}}
 
-"{{{ fzf
-augroup fzf_maps
+""{{{ fzf
+"augroup fzf_maps
+"  autocmd!
+"  nnoremap <silent> <Space>f  :Files .<cr>
+"augroup END
+""}}}
+
+"{{{ ctrlp
+augroup ctrlp_maps
   autocmd!
-  nnoremap <silent> <Space>f  :Files .<cr>
+  nnoremap <silent> <Space>f  :CtrlP <cr>
+  nnoremap <silent> ,,        :CtrlPMRU <cr>
 augroup END
 "}}}
