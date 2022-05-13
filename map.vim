@@ -93,24 +93,24 @@ nnoremap <silent> [gtags]g :execute  "Gtags " . @*<CR>
 nnoremap <Space>tl :Tlist<CR>
 "}}}
 
-"{{{ dirvsh
-augroup my_dirvish_events
-  autocmd!
-    let g:dirvish_relative_paths = 0
-    " Enable fugitive.vim in Dirvish buffers.
-
-    autocmd FileType dirvish map <buffer> u <Plug>(dirvish_up)
-    autocmd FileType dirvish map <buffer> l i
-    autocmd FileType dirvish map <buffer> h <Plug>(dirvish_up)
-    autocmd FileType dirvish map <buffer> e <CR>
-    autocmd FileType dirvish map <buffer> gc :execute 'lcd ' fnameescape(expand('%:p:h'))<CR>
-    autocmd FileType dirvish silent! unmap -
-
-    " Map `gh` to hide dot-prefixed files.  Press `R` to "toggle" (reload).
-    autocmd FileType dirvish nnoremap <silent><buffer>
-      \ . :silent keeppatterns g@\v/\.[^\/]+/?$@d _<cr>
-augroup END
-"}}}
+""{{{ dirvsh
+"augroup my_dirvish_events
+"  autocmd!
+"    let g:dirvish_relative_paths = 0
+"    " Enable fugitive.vim in Dirvish buffers.
+"
+"    autocmd FileType dirvish map <buffer> u <Plug>(dirvish_up)
+"    autocmd FileType dirvish map <buffer> l i
+"    autocmd FileType dirvish map <buffer> h <Plug>(dirvish_up)
+"    autocmd FileType dirvish map <buffer> e <CR>
+"    autocmd FileType dirvish map <buffer> gc :execute 'lcd ' fnameescape(expand('%:p:h'))<CR>
+"    autocmd FileType dirvish silent! unmap -
+"
+"    " Map `gh` to hide dot-prefixed files.  Press `R` to "toggle" (reload).
+"    autocmd FileType dirvish nnoremap <silent><buffer>
+"      \ . :silent keeppatterns g@\v/\.[^\/]+/?$@d _<cr>
+"augroup END
+""}}}
 
 "{{{ flutter-vim
 augroup flutter_vim_maps
@@ -137,4 +137,12 @@ augroup ctrlp_maps
   nnoremap <silent> <Space>f  :CtrlP <cr>
   nnoremap <silent> ,,        :CtrlPMRU <cr>
 augroup END
+"}}}
+
+"{{{ molder
+  autocmd FileType molder map <buffer> gc :execute 'lcd ' fnameescape(expand('%:p:h'))<CR>
+  autocmd FileType molder map <buffer> e <Plug>(molder-open)
+  autocmd FileType molder map <buffer> l <Plug>(molder-open)
+  autocmd FileType molder map <buffer> h <Plug>(molder-up)
+  autocmd FileType molder map <buffer> <F5> <Plug>(molder-reload)
 "}}}

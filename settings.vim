@@ -251,12 +251,12 @@ inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
 let g:previm_show_header = 0
 "}}}
 
-"{{{dirvish
-  let g:loaded_netrwPlugin = 1
-  command! -nargs=? -complete=dir Explore Dirvish <args>
-  command! -nargs=? -complete=dir Sexplore belowright split | silent Dirvish <args>
-  command! -nargs=? -complete=dir Vexplore leftabove vsplit | silent Dirvish <args>
-"}}}
+""{{{dirvish
+"  let g:loaded_netrwPlugin = 1
+"  command! -nargs=? -complete=dir Explore Dirvish <args>
+"  command! -nargs=? -complete=dir Sexplore belowright split | silent Dirvish <args>
+"  command! -nargs=? -complete=dir Vexplore leftabove vsplit | silent Dirvish <args>
+""}}}
 
 "{{{vim-flutter
   let g:flutter_show_log_always_tab=1
@@ -311,4 +311,8 @@ let g:mml_nsf2wav_command = expand('~/tools/nsf/nsf2wav/nsf2wav.exe')
 "{{{ctrlp
 let g:ctrlp_match_func = {'match': 'ctrlp_matchfuzzy#matcher'}
 let g:ctrlp_working_path_mode = 'ra'
+"}}}
+
+"{{{ molder
+let g:molder_show_hidden = 1
 "}}}
