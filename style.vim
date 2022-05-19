@@ -14,6 +14,8 @@ set nocursorline
 set matchtime=2
 set cmdheight=1
 set showcmd
+set belloff=all
+
 
 set ambiwidth=double
 
@@ -25,6 +27,7 @@ set fileencodings+=cp932
 set fileencodings+=default
 set fileencodings+=latin1
 
+set fileformats=unix,dos
 set fileformat=unix
 set fileformats=unix,dos
 
@@ -42,3 +45,7 @@ else
 endif
 set foldmethod=marker
 
+" from $VIMRUNTIME/defaults.vim
+set backspace=indent,eol,start
+set noruler
+set nrformats-=octal

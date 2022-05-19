@@ -16,13 +16,9 @@ noremap  <Space>Y "*Y<CR>
 noremap  <Space>p "*p<CR>
 nnoremap <Space>cs    :nohlsearch<CR>
 
-noremap <silent> <Space>ev :edit ~/.vim<CR>
-noremap <silent> <Space>ec :edit ~/.vim/colors<CR>
-"noremap <silent> <Space>lv :source ~/.vimrc<CR>
+"noremap <silent> <Space>ev :edit ~/.vim<CR>
 noremap <silent> <Space>ed :edit ~/Desktop<CR>
 noremap <silent> <Space>ew :edit ~/work<CR>
-
-"noremap <F10> :edit ~/work/memo/task_memo.changelog<CR>
 
 noremap <silent> <Space>co :copen<CR>
 noremap <silent> <Space>cc :cclose<CR>
@@ -35,37 +31,19 @@ noremap <silent> <C-p> :cp<CR>
 "noremap <silent> <Space>is :!ino serial<CR>
 "}}}
 
-
-"{{{ git
-let g:git_no_map_default = 1
-"nnoremap <Space>gd :GitDiff<Enter>
-"nnoremap <Space>gD :GitDiff --cached<Enter>
-"nnoremap <Space>gs :GitStatus<Enter>
-nnoremap <Space>gl :GitLog<Enter>
-nnoremap <Space>ga :GitAdd<Enter>
-nnoremap <Space>gA :GitAdd <cfile><Enter>
-"nnoremap <Space>gc :GitCommit <Enter>
-"nnoremap <Space>gp :GitPullRebase<Enter>
-nnoremap <Space>gb :GitBlame<Enter>
-nnoremap <Space>gV :Gitv --all<CR>
-augroup gitv
-  autocmd!
-  autocmd FileType gitv nnoremap <silent><buffer> C :<C-u>Git checkout <C-r><C-w><CR>
-  autocmd FileType gitv nnoremap <buffer> <silent> q :close<CR>
-augroup END
-"}}}
-
-
 "{{{ fugitive
-nnoremap <Space>gs :Gstatus<Enter>
-nnoremap <Space>gd :Gdiff<Enter>
+nnoremap <Space>ga :Git add %<Enter>
+nnoremap <Space>gs :Git<Enter>
+nnoremap <Space>gd :Gdiffsplit<Enter>
 nnoremap <Space>gc :Git commit -v <Enter>
+autocmd FileType fugitive nnoremap q gq
 "}}}
 
 
 "{{{ quickrun
 let g:quickrun_no_default_key_mappings=1
 silent! map <unique> <Space>r <Plug>(quickrun)
+autocmd FileType quickrun nnoremap <buffer> q :q<cr>
 "}}}
 
 
@@ -93,11 +71,10 @@ nnoremap <silent> [gtags]g :execute  "Gtags " . @*<CR>
 nnoremap <Space>tl :Tlist<CR>
 "}}}
 
-""{{{ dirvsh
+"{{{ dirvsh
 "augroup my_dirvish_events
 "  autocmd!
 "    let g:dirvish_relative_paths = 0
-"    " Enable fugitive.vim in Dirvish buffers.
 "
 "    autocmd FileType dirvish map <buffer> u <Plug>(dirvish_up)
 "    autocmd FileType dirvish map <buffer> l i
@@ -110,7 +87,7 @@ nnoremap <Space>tl :Tlist<CR>
 "    autocmd FileType dirvish nnoremap <silent><buffer>
 "      \ . :silent keeppatterns g@\v/\.[^\/]+/?$@d _<cr>
 "augroup END
-""}}}
+"}}}
 
 "{{{ flutter-vim
 augroup flutter_vim_maps
@@ -124,18 +101,32 @@ augroup flutter_vim_maps
 augroup END
 "}}}
 
-""{{{ fzf
+"{{{ fzf
 "augroup fzf_maps
 "  autocmd!
 "  nnoremap <silent> <Space>f  :Files .<cr>
 "augroup END
-""}}}
+"}}}
+
+"{{{ molder
+  autocmd FileType molder map <buffer> gc :execute 'lcd ' fnameescape(expand('%:p:h'))<CR>
+  autocmd FileType molder map <buffer> e <Plug>(molder-open)
+  autocmd FileType molder map <buffer> l <Plug>(molder-open)
+  autocmd FileType molder map <buffer> h <Plug>(molder-up)
+  autocmd FileType molder map <buffer> <F5> <Plug>(molder-reload)
+"}}}
+
+"{{{ go:delve
+autocmd FileType go nnoremap <buffer> <F5> :DlvDebug<cr>
+autocmd FileType go nnoremap <buffer> <F6> :DlvToggleBreakpoint<cr>
+autocmd FileType go nnoremap <buffer> <F7> :DlvToggleTracepoint<cr>
+"}}}
 
 "{{{ ctrlp
 augroup ctrlp_maps
   autocmd!
-  nnoremap <silent> <Space>f  :CtrlP <cr>
-  nnoremap <silent> ,,        :CtrlPMRU <cr>
+  nnoremap <silent> <Space>f  :CtrlP<cr>
+  nnoremap <silent> ,, :CtrlPMRU<cr>
 augroup END
 "}}}
 
