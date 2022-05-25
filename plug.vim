@@ -20,8 +20,7 @@ Plug 'dart-lang/dart-vim-plugin', { 'for': 'dart' }
 Plug 'thosakwe/vim-flutter',      { 'for': 'dart' } 
 Plug 'posva/vim-vue',             { 'for': 'vue' } 
 Plug 'mattn/vim-goimports',       { 'for': 'go' }
-"Plug 'sebdah/vim-delve',          { 'for': 'go' }
-Plug 'datsuns/vim-delve',         { 'for': 'go', 'branch': 'run_on_win_gvim' }
+Plug 'sebdah/vim-delve',          { 'for': 'go' }
 Plug 'rust-lang/rust.vim',        { 'for': 'rust' }
 Plug 'gburca/vim-logcat',         { 'for': 'logcat' }
 
@@ -36,9 +35,8 @@ Plug 'mattn/vim-lsp-settings'
 Plug 'mattn/vim-molder'
 "Plug 'hrsh7th/vim-vsnip'
 "Plug 'hrsh7th/vim-vsnip-integ'
-"Plug 'ziglang/zig.vim', { 'for': 'zig' }
-"Plug 'udalov/kotlin-vim', { 'for': 'kotlin' }
 
+"my
 "Plug 'datsuns/vim-go-openimport', { 'for': 'go' }
 "Plug 'datsuns/astyle.vim'
 "Plug 'datsuns/vim-flutter', { 'branch': 'feature/merge_windows_job_error', 'for': 'dart' } 
