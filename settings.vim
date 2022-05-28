@@ -68,11 +68,20 @@ set pyxversion=3
 
 "{{{lightline
 let g:lightline = {
-      \ 'colorscheme': 'OldHope',
+      \   'colorscheme': 'OldHope',
       \ }
+let g:lightline.active = {
+    \ 'left': [ [ 'mode', 'paste' ],
+    \           [ 'readonly', 'filename', 'modified', 'charvaluehex' ] ],
+    \ 'right': [ [ 'lineinfo' ],
+    \            [ 'percent' ],
+    \            [ 'fileformat', 'fileencoding', 'filetype' ] ] }
 let g:lightline.tab = {
     \ 'active': [ 'filename', 'modified' ],
     \ 'inactive': [ 'filename', 'modified' ] }
+let g:lightline.component = {
+      \ 'charvaluehex': '0x%B',
+      \ }
 "}}}
 
 
