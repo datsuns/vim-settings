@@ -72,15 +72,15 @@ let g:lightline = {
       \ }
 let g:lightline.active = {
     \ 'left': [ [ 'mode', 'paste' ],
-    \           [ 'readonly', 'filename', 'modified', 'charvaluehex' ] ],
+    \           [ 'readonly', 'filename', 'modified' ] ],
     \ 'right': [ [ 'lineinfo' ],
     \            [ 'percent' ],
-    \            [ 'fileformat', 'fileencoding', 'filetype' ] ] }
+    \            [ 'fileformat', 'fileencoding', 'filetype', 'charvaluehex' ] ] }
 let g:lightline.tab = {
     \ 'active': [ 'filename', 'modified' ],
     \ 'inactive': [ 'filename', 'modified' ] }
 let g:lightline.component = {
-      \ 'charvaluehex': '0x%B',
+      \ 'charvaluehex': '%04B',
       \ }
 "}}}
 
