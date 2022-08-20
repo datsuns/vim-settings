@@ -29,7 +29,6 @@ Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'prabirshrestha/vim-lsp'
-Plug 'mattn/vim-lsp-settings'
 "Plug 'mattn/vim-lsp-icons'
 
 Plug 'mattn/vim-molder'
@@ -43,5 +42,6 @@ Plug 'mattn/vim-molder'
 Plug 'datsuns/vim-mml', { 'for': 'mml' } 
 Plug 'datsuns/vim-mml-play', { 'for': 'mml' } 
 Plug 'datsuns/vim-svn-explorer'
+Plug 'datsuns/vim-lsp-settings'
 
 call plug#end()
