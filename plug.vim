@@ -23,6 +23,7 @@ Plug 'mattn/vim-goimports',       { 'for': 'go' }
 Plug 'sebdah/vim-delve',          { 'for': 'go' }
 Plug 'rust-lang/rust.vim',        { 'for': 'rust' }
 Plug 'gburca/vim-logcat',         { 'for': 'logcat' }
+Plug 'udalov/kotlin-vim',         { 'for': 'kotlin' }
 
 " for lsp
 Plug 'prabirshrestha/async.vim'
