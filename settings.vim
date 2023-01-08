@@ -146,4 +146,5 @@ let g:rust_fold = 1
 "{{{ ctrlp
 let g:ctrlp_match_func = {'match': 'ctrlp_matchfuzzy#matcher'}
 let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_map = '<Space>f'
 "}}}
