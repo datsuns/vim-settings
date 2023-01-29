@@ -42,7 +42,22 @@ let g:asyncomplete_min_chars               = 0
 augroup MyLspAutoCommand
 	autocmd!
   autocmd BufWritePre *.go   :execute("LspDocumentFormatSync")
+  autocmd BufWritePre *.py   :execute("LspDocumentFormatSync")
 augroup END
 
 "let lsp_log_verbose=1
 "let lsp_log_file = expand('~/lsp.log')
+
+let g:lsp_settings = {
+\   'pylsp-all': {
+\     'workspace_config': {
+\       'pylsp': {
+\         'plugins': {
+\           'pycodestyle': {
+\             'ignore': ["E221", "E501"]
+\           }
+\         }
+\       }
+\     }
+\   },
+\}
