@@ -59,7 +59,7 @@ let g:lsp_settings = {
 \       'pylsp': {
 \         'plugins': {
 \           'pycodestyle': {
-\             'ignore': ["E221", "E265", "E501"]
+\             'ignore': ["E221", "E265", "E501", "E704"]
 \           }
 \         }
 \       }
