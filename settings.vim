@@ -58,8 +58,6 @@ let g:Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
  let g:delve_cache_path = g:my_home_directory . "/cache/go-delv"
 "}}}
 
-  autocmd BufWritePre *.go call execute(['LspCodeActionSync source.organizeImports', 'LspDocumentFormatSync'])
-
 "}}}
 
 "{{{vim-metarw-svn
