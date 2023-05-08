@@ -24,6 +24,9 @@ Plug 'sebdah/vim-delve',          { 'for': 'go' }
 Plug 'rust-lang/rust.vim',        { 'for': 'rust' }
 Plug 'gburca/vim-logcat',         { 'for': 'logcat' }
 Plug 'udalov/kotlin-vim',         { 'for': 'kotlin' }
+Plug 'othree/html5.vim',          { 'for': 'svelte' }
+Plug 'pangloss/vim-javascript',   { 'for': 'svelte' }
+Plug 'evanleck/vim-svelte',       { 'for': 'svelte', 'branch': 'main'}
 
 " for lsp
 Plug 'prabirshrestha/async.vim'
