@@ -50,8 +50,12 @@ let g:Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
 "{{{golang
 
 "{{{mattn/vim-goimports
-  let g:goimports = 1
-  let g:goimports_simplify = 1
+  let g:goimports = 0
+  let g:goimports_simplify = 0
+"}}}
+
+"{{{ go-delv (go-debugger)
+ let g:delve_cache_path = g:my_home_directory . "/cache/go-delv"
 "}}}
 
 "}}}
@@ -89,12 +93,12 @@ let g:lightline.component = {
 let g:previm_show_header = 0
 "}}}
 
-""{{{dirvish
-"  let g:loaded_netrwPlugin = 1
-"  command! -nargs=? -complete=dir Explore Dirvish <args>
-"  command! -nargs=? -complete=dir Sexplore belowright split | silent Dirvish <args>
-"  command! -nargs=? -complete=dir Vexplore leftabove vsplit | silent Dirvish <args>
-""}}}
+"{{{dirvish
+" let g:loaded_netrwPlugin = 1
+" command! -nargs=? -complete=dir Explore Dirvish <args>
+" command! -nargs=? -complete=dir Sexplore belowright split | silent Dirvish <args>
+" command! -nargs=? -complete=dir Vexplore leftabove vsplit | silent Dirvish <args>
+"}}}
 
 "{{{vim-flutter
   let g:flutter_show_log_always_tab=0
@@ -124,10 +128,6 @@ augroup END
   autocmd FileType mml nmap <buffer> <Space>q :StopMml<CR>
 "}}}
 
-"{{{ go-delv (go-debugger)
- let g:delve_cache_path = g:my_home_directory . "/cache/go-delv"
-"}}}
-
 "{{{ fzf
 "let g:fzf_action = {
 "  \ 'ctrl-t': 'tab split',
@@ -144,4 +144,5 @@ let g:rust_fold = 1
 "{{{ ctrlp
 let g:ctrlp_match_func = {'match': 'ctrlp_matchfuzzy#matcher'}
 let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_map = '<Space>f'
 "}}}

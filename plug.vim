@@ -23,16 +23,18 @@ Plug 'mattn/vim-goimports',       { 'for': 'go' }
 Plug 'sebdah/vim-delve',          { 'for': 'go' }
 Plug 'rust-lang/rust.vim',        { 'for': 'rust' }
 Plug 'gburca/vim-logcat',         { 'for': 'logcat' }
+Plug 'udalov/kotlin-vim',         { 'for': 'kotlin' }
 
 " for lsp
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'prabirshrestha/vim-lsp'
-Plug 'mattn/vim-lsp-settings'
 "Plug 'mattn/vim-lsp-icons'
+Plug 'mattn/vim-lsp-settings'
 
 Plug 'mattn/vim-molder'
+"Plug 'mattn/vim-molder-operations'
 "Plug 'hrsh7th/vim-vsnip'
 "Plug 'hrsh7th/vim-vsnip-integ'
 
@@ -43,5 +45,6 @@ Plug 'mattn/vim-molder'
 Plug 'datsuns/vim-mml', { 'for': 'mml' } 
 Plug 'datsuns/vim-mml-play', { 'for': 'mml' } 
 Plug 'datsuns/vim-svn-explorer'
+Plug 'datsuns/vim-molder-operations'
 
 call plug#end()

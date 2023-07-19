@@ -16,8 +16,10 @@ set cmdheight=1
 set showcmd
 set belloff=all
 
-
-set ambiwidth=double
+if has("win32")
+  " w/ kaoriya patch 2005-ambiwidth_auto.diff
+  set ambiwidth=auto
+endif
 
 set cursorline
 
