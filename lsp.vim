@@ -7,6 +7,7 @@ function! s:on_lsp_buffer_enabled() abort
   setlocal signcolumn=yes
   nmap <buffer> gd <plug>(lsp-peek-definition)
   nmap <buffer> gD <plug>(lsp-definition)
+  nmap <buffer> gT :execute(":tab LspDefinition")<CR>
   nmap <buffer> gr <plug>(lsp-references)
   nmap <buffer> gi <plug>(lsp-implementation))
   nmap <buffer> gt <plug>(lsp-type-definition))

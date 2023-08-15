@@ -129,3 +129,11 @@ augroup ctrlp_maps
   nnoremap <silent> ,, :CtrlPMRU<cr>
 augroup END
 "}}}
+
+"{{{ molder
+  autocmd FileType molder map <buffer> gc :execute 'lcd ' fnameescape(expand('%:p:h'))<CR>
+  autocmd FileType molder map <buffer> e <Plug>(molder-open)
+  autocmd FileType molder map <buffer> l <Plug>(molder-open)
+  autocmd FileType molder map <buffer> h <Plug>(molder-up)
+  autocmd FileType molder map <buffer> <F5> <Plug>(molder-reload)
+"}}}
