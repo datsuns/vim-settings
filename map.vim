@@ -15,6 +15,7 @@ noremap  <Space>y "*y<CR>
 noremap  <Space>Y "*Y<CR>
 noremap  <Space>p "*p<CR>
 nnoremap <Space>cs    :nohlsearch<CR>
+map <silent> * :let @/="\\<<c-r><c-w>\\>"<CR>
 
 "noremap <silent> <Space>ev :edit ~/.vim<CR>
 noremap <silent> <Space>ed :edit ~/Desktop<CR>
