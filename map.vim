@@ -15,7 +15,7 @@ noremap  <Space>y "*y<CR>
 noremap  <Space>Y "*Y<CR>
 noremap  <Space>p "*p<CR>
 nnoremap <Space>cs    :nohlsearch<CR>
-map <silent> * :let @/="\\<<c-r><c-w>\\>"<CR>
+map <silent> * :let @/="\\<<c-r><c-w>\\>"<CR>:set hls<CR>
 
 "noremap <silent> <Space>ev :edit ~/.vim<CR>
 noremap <silent> <Space>ed :edit ~/Desktop<CR>
@@ -37,7 +37,7 @@ nnoremap <Space>ga :Git add %<Enter>
 nnoremap <Space>gs :Git<Enter>
 nnoremap <Space>gd :Gdiffsplit<Enter>
 nnoremap <Space>gc :Git commit -v <Enter>
-autocmd FileType fugitive nnoremap q gq
+"autocmd FileType fugitive nnoremap q gq
 "}}}
 
 
