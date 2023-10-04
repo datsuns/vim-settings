@@ -146,3 +146,16 @@ let g:ctrlp_match_func = {'match': 'ctrlp_matchfuzzy#matcher'}
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_map = '<Space>f'
 "}}}
+
+"{{{ binary
+"バイナリ編集(xxd)モード（vim -b での起動、もしくは *.bin ファイルを開くと発動します）
+"augroup BinaryXXD
+"  autocmd!
+"  autocmd BufReadPre  *.bin let &binary =1
+"  autocmd BufReadPost * if &binary | silent %!xxd -g 1
+"  autocmd BufReadPost * set ft=xxd | endif
+"  autocmd BufWritePre * if &binary | %!xxd -r | endif
+"  autocmd BufWritePost * if &binary | silent %!xxd -g 1
+"  autocmd BufWritePost * set nomod | endif
+"augroup END
+"}}}
