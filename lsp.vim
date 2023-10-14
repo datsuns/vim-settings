@@ -46,8 +46,7 @@ let g:asyncomplete_min_chars               = 0
 
 augroup MyLspAutoCommand
   autocmd!
-  autocmd BufWritePre *.go     :silent execute("LspCodeActionSync source.organizeImports")
-  autocmd BufWritePre *.go     :silent execute("LspDocumentFormatSync")
+  autocmd BufWritePre *.go     call execute('LspDocumentFormatSync') | call execute('LspCodeActionSync source.organizeImports')
   autocmd BufWritePre *.rs     :execute("LspDocumentFormatSync")
   autocmd BufWritePre *.svelte :execute("LspDocumentFormatSync")
   autocmd BufWritePre *.py     :execute("LspDocumentFormatSync")

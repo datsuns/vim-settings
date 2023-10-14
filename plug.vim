@@ -19,7 +19,7 @@ Plug 'PProvost/vim-ps1',          { 'for': 'ps1' }
 Plug 'dart-lang/dart-vim-plugin', { 'for': 'dart' }
 Plug 'thosakwe/vim-flutter',      { 'for': 'dart' } 
 Plug 'posva/vim-vue',             { 'for': 'vue' } 
-Plug 'mattn/vim-goimports',       { 'for': 'go' }
+"Plug 'mattn/vim-goimports',       { 'for': 'go' }
 Plug 'sebdah/vim-delve',          { 'for': 'go' }
 Plug 'rust-lang/rust.vim',        { 'for': 'rust' }
 Plug 'gburca/vim-logcat',         { 'for': 'logcat' }
