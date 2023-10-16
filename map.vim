@@ -20,6 +20,10 @@ map <silent> * :let @/="\\<<c-r><c-w>\\>"<CR>
 "noremap <silent> <Space>ev :edit ~/.vim<CR>
 noremap <silent> <Space>ed :edit ~/Desktop<CR>
 noremap <silent> <Space>ew :edit ~/work<CR>
+" open directory of current buffer
+"map ,e :e <C-R>=expand("%:p:h") . "/" <CR>
+map <Space>D :tabe <C-R>=expand("%:p:h") . "/"<CR>
+"map ,s :split <C-R>=expand("%:p:h") . "/" <CR>
 
 noremap <silent> <Space>co :copen<CR>
 noremap <silent> <Space>cc :cclose<CR>
