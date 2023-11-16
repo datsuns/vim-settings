@@ -16,7 +16,7 @@ set cmdheight=1
 set showcmd
 set belloff=all
 
-if has("win32")
+if has("win32") && has("gui_running")
   " w/ kaoriya patch 2005-ambiwidth_auto.diff
   set ambiwidth=auto
 endif
