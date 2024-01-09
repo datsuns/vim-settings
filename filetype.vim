@@ -35,3 +35,6 @@ autocmd FileType vue syntax sync fromstart
 
 " asm
 au BufNewFile,BufRead *.src		setf asm
+
+" nu
+au BufNewFile,BufRead *.nu,*.nujson,Nukefile    setf nu

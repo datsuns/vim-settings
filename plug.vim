@@ -27,6 +27,7 @@ Plug 'udalov/kotlin-vim',         { 'for': 'kotlin' }
 Plug 'othree/html5.vim',          { 'for': 'svelte' }
 Plug 'pangloss/vim-javascript',   { 'for': 'svelte' }
 Plug 'evanleck/vim-svelte',       { 'for': 'svelte', 'branch': 'main'}
+Plug 'datsuns/vim-nu-syntax',     { 'for': 'nu' }
 
 " for lsp
 Plug 'prabirshrestha/async.vim'
