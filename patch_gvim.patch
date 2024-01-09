@@ -1,0 +1,359 @@
+diff --git a/runtime/doc/options.txt b/runtime/doc/options.txt
+index 4dff6b53f..a9d1bb32d 100644
+--- a/runtime/doc/options.txt
++++ b/runtime/doc/options.txt
+@@ -800,6 +800,9 @@ A jump table for the options with a short description can be found at |Q_op|.
+ 	"single":	Use the same width as characters in US-ASCII.  This is
+ 			expected by most users.
+ 	"double":	Use twice the width of ASCII characters.
++	"auto":		Use obtained width from system.
++			{only for Win NT/2K systems, currently}
++
+ 							*E834* *E835*
+ 	The value "double" cannot be used if 'listchars' or 'fillchars'
+ 	contains a character that would be double width.  These errors may
+@@ -828,6 +831,10 @@ A jump table for the options with a short description can be found at |Q_op|.
+ 	escape sequence to request cursor position report.  The response can
+ 	be found in |v:termu7resp|.
+ 
++	On some systems, we can use width for a character which defined by
++	font design.  If you use such a system try "auto" for this option.
++	It will give you more nice result for a font which you select.
++
+ 			*'antialias'* *'anti'* *'noantialias'* *'noanti'*
+ 'antialias' 'anti'	boolean (default: off)
+ 			global
+@@ -4144,6 +4151,9 @@ A jump table for the options with a short description can be found at |Q_op|.
+ 		try to keep 'lines' and 'columns' the same when adding and
+ 		removing GUI components.
+ 
++	  'C'	Remove caption (title) bar.  Support Win32 only.
++
++
+ 						*'guipty'* *'noguipty'*
+ 'guipty'		boolean	(default on)
+ 			global
+diff --git a/src/Make_cyg_ming.mak b/src/Make_cyg_ming.mak
+index 7afb6e03c..793581124 100644
+--- a/src/Make_cyg_ming.mak
++++ b/src/Make_cyg_ming.mak
+@@ -234,7 +234,8 @@ endif
+ 
+ # Get the default ARCH.
+ ifndef ARCH
+-ARCH := $(shell $(CC) -dumpmachine | sed -e 's/-.*//' -e 's/_/-/' -e 's/^mingw32$$/i686/')
++#ARCH := $(shell $(CC) -dumpmachine | sed -e 's/-.*//' -e 's/_/-/' -e 's/^mingw32$$/i686/')
++ARCH := x86-64
+ endif
+ 
+ 
+diff --git a/src/gui.c b/src/gui.c
+index 16c1b54c6..4fe20cc3f 100644
+--- a/src/gui.c
++++ b/src/gui.c
+@@ -3474,6 +3474,8 @@ gui_init_which_components(char_u *oldval UNUSED)
+     static int	prev_tearoff = -1;
+     int		using_tearoff = FALSE;
+ #endif
++    static int	prev_nocaption = -1;
++    int		using_caption = TRUE;
+ 
+     char_u	*p;
+     int		i;
+@@ -3549,6 +3551,9 @@ gui_init_which_components(char_u *oldval UNUSED)
+ 		using_tearoff = TRUE;
+ #endif
+ 		break;
++	    case GO_NOCAPTION:
++		using_caption = FALSE;
++		break;
+ 	    default:
+ 		// Ignore options that are not supported
+ 		break;
+@@ -3651,6 +3656,14 @@ gui_init_which_components(char_u *oldval UNUSED)
+ 	prev_tearoff = using_tearoff;
+     }
+ #endif
++    if (using_caption != prev_nocaption)
++    {
++#if defined(MSWIN)
++	gui_mch_show_caption(using_caption);
++#endif
++	prev_nocaption = using_caption;
++	need_set_size = TRUE;
++    }
+     if (need_set_size != 0)
+     {
+ #ifdef FEAT_GUI_GTK
+diff --git a/src/gui_w32.c b/src/gui_w32.c
+index eb4c84138..347c164f3 100644
+--- a/src/gui_w32.c
++++ b/src/gui_w32.c
+@@ -1160,6 +1160,55 @@ _OnSizeTextArea(
+ #endif
+ }
+ 
++    static int
++has_caption(void)
++{
++    return GetWindowLong(s_hwnd, GWL_STYLE) & WS_CAPTION;
++}
++
++    static int
++get_caption_height(void)
++{
++    // A window's caption includes extra 1 dot margin.  When caption is
++    // removed the margin also be removed.  So we must return -1 when
++    // caption is diabled.
++    return has_caption() ? GetSystemMetrics(SM_CYCAPTION) : -1;
++}
++
++    static int
++get_caption_width_adjustment(void)
++{
++    return has_caption() ? 0 : -2;
++}
++
++    void
++gui_mch_show_caption(int show)
++{
++    const static LONG flags_on = WS_CAPTION;
++    const static LONG flags_off = 0;
++    LONG style, newstyle;
++
++    // Remove caption when title is null
++    style = newstyle = GetWindowLong(s_hwnd, GWL_STYLE);
++    if (show)
++    {
++	newstyle &= ~flags_off;
++	newstyle |= flags_on;
++    }
++    else
++    {
++	newstyle &= ~flags_on;
++	newstyle |= flags_off;
++    }
++    if (newstyle != style)
++    {
++	SetWindowLong(s_hwnd, GWL_STYLE, newstyle);
++	SetWindowPos(s_hwnd, NULL, 0, 0, 0, 0,
++		SWP_FRAMECHANGED | SWP_NOMOVE | SWP_NOSIZE | SWP_NOZORDER);
++	gui_set_shellsize(FALSE, FALSE, RESIZE_BOTH);
++    }
++}
++
+ #ifdef FEAT_MENU
+ /*
+  * Find the vimmenu_T with the given id
+@@ -3138,11 +3187,13 @@ gui_mswin_get_valid_dimensions(
+ 
+     base_width = gui_get_base_width()
+ 	+ (pGetSystemMetricsForDpi(SM_CXFRAME, s_dpi) +
+-	   pGetSystemMetricsForDpi(SM_CXPADDEDBORDER, s_dpi)) * 2;
++	   pGetSystemMetricsForDpi(SM_CXPADDEDBORDER, s_dpi)) * 2
++	+ get_caption_width_adjustment();
+     base_height = gui_get_base_height()
+ 	+ (pGetSystemMetricsForDpi(SM_CYFRAME, s_dpi) +
+ 	   pGetSystemMetricsForDpi(SM_CXPADDEDBORDER, s_dpi)) * 2
+ 	+ pGetSystemMetricsForDpi(SM_CYCAPTION, s_dpi)
++	+ get_caption_height()
+ 	+ gui_mswin_get_menu_height(FALSE);
+     *cols = (w - base_width) / gui.char_width;
+     *rows = (h - base_height) / gui.char_height;
+@@ -3617,12 +3668,14 @@ gui_mch_newfont(void)
+     if (win_socket_id == 0)
+     {
+ 	gui_resize_shell(rect.right - rect.left
++	    - get_caption_width_adjustment()
+ 	    - (pGetSystemMetricsForDpi(SM_CXFRAME, s_dpi) +
+ 	       pGetSystemMetricsForDpi(SM_CXPADDEDBORDER, s_dpi)) * 2,
+ 	    rect.bottom - rect.top
+ 	    - (pGetSystemMetricsForDpi(SM_CYFRAME, s_dpi) +
+ 	       pGetSystemMetricsForDpi(SM_CXPADDEDBORDER, s_dpi)) * 2
+ 	    - pGetSystemMetricsForDpi(SM_CYCAPTION, s_dpi)
++	    - get_caption_height()
+ 	    - gui_mswin_get_menu_height(FALSE));
+     }
+     else
+@@ -5156,6 +5209,56 @@ error:
+ }
+ #endif
+ 
++#ifdef USE_AMBIWIDTH_AUTO
++#define CHARWIDE_CACHESIZE 0x20000
++static GuiFont last_font = 0;
++
++    int
++gui_mch_get_charwidth(int c)
++{
++    static int cache[CHARWIDE_CACHESIZE];
++    GuiFont usingfont = gui.wide_font ? gui.wide_font : gui.norm_font;
++
++    // Check validity of charwide cache
++    if (last_font != usingfont)
++    {
++	// Update cache. -1 is mark for uninitialized cell
++	int i;
++
++	TRACE("Charwide cache will be updated (base=%d)\n", gui.char_width);
++	last_font = usingfont;
++	for (i = 0; i < CHARWIDE_CACHESIZE; ++i)
++	    cache[i] = -1;
++    }
++    if (usingfont && 0 <= c && c < CHARWIDE_CACHESIZE)
++    {
++	if (cache[c] >= 0)
++	    return cache[c]; // Use cached value
++	else
++	{
++	    // Get true character width in dot, convert to cells and save it.
++	    int	    len;
++	    ABC	    fontABC;
++	    HFONT   hfntOld = SelectFont(s_hdc, usingfont);
++
++	    if (!GetCharABCWidthsW(s_hdc, c, c, &fontABC) ||
++		    (len = fontABC.abcA + fontABC.abcB + fontABC.abcC) <= 0)
++	    {
++		TRACE("GetCharABCWidthsW() failed for %08X\n", c);
++		cache[c] = 0;
++	    }
++	    else
++		cache[c] = ((len + (gui.char_width >> 1)) / gui.char_width);
++	    SelectFont(s_hdc, hfntOld);
++
++	    return cache[c];
++	}
++    }
++    else
++	return 0;
++}
++#endif
++
+ /*
+  * Parse the GUI related command-line arguments.  Any arguments used are
+  * deleted from argv, and *argc is decremented accordingly.  This is called
+@@ -5613,10 +5716,12 @@ gui_mch_set_shellsize(
+ 
+     // compute the size of the outside of the window
+     win_width = width + (pGetSystemMetricsForDpi(SM_CXFRAME, s_dpi) +
+-		     pGetSystemMetricsForDpi(SM_CXPADDEDBORDER, s_dpi)) * 2;
++		     pGetSystemMetricsForDpi(SM_CXPADDEDBORDER, s_dpi)) * 2
++			+ get_caption_width_adjustment();
+     win_height = height + (pGetSystemMetricsForDpi(SM_CYFRAME, s_dpi) +
+ 		       pGetSystemMetricsForDpi(SM_CXPADDEDBORDER, s_dpi)) * 2
+ 			+ pGetSystemMetricsForDpi(SM_CYCAPTION, s_dpi)
++			+ get_caption_height()
+ 			+ gui_mswin_get_menu_height(FALSE);
+ 
+     // The following should take care of keeping Vim on the same monitor, no
+@@ -6460,7 +6565,8 @@ gui_mch_get_screen_dimensions(int *screen_w, int *screen_h)
+ 
+     *screen_w = workarea_rect.right - workarea_rect.left
+ 		- (pGetSystemMetricsForDpi(SM_CXFRAME, s_dpi) +
+-		   pGetSystemMetricsForDpi(SM_CXPADDEDBORDER, s_dpi)) * 2;
++		   pGetSystemMetricsForDpi(SM_CXPADDEDBORDER, s_dpi)) * 2
++		- get_caption_width_adjustment();
+ 
+     // FIXME: dirty trick: Because the gui_get_base_height() doesn't include
+     // the menubar for MSwin, we subtract it from the screen height, so that
+@@ -6469,6 +6575,7 @@ gui_mch_get_screen_dimensions(int *screen_w, int *screen_h)
+ 		- (pGetSystemMetricsForDpi(SM_CYFRAME, s_dpi) +
+ 		   pGetSystemMetricsForDpi(SM_CXPADDEDBORDER, s_dpi)) * 2
+ 		- pGetSystemMetricsForDpi(SM_CYCAPTION, s_dpi)
++		- get_caption_height()
+ 		- gui_mswin_get_menu_height(FALSE);
+ }
+ 
+diff --git a/src/mbyte.c b/src/mbyte.c
+index ee2834cf4..31c7bb1c7 100644
+--- a/src/mbyte.c
++++ b/src/mbyte.c
+@@ -1603,6 +1603,19 @@ utf_char2cells(int c)
+     }
+ #endif
+ 
++#ifdef USE_AMBIWIDTH_AUTO
++    if (gui.in_use && *p_ambw == 'a')
++    {
++	int cell;
++
++	/* This is required by screen.c implicitly. */
++	if (c == 0)
++	    return 1;
++	if (utf_printable(c) && (cell = gui_mch_get_charwidth(c)) > 0)
++	    return cell;
++    }
++#endif
++
+     if (c >= 0x100)
+     {
+ #ifdef USE_WCHAR_FUNCTIONS
+diff --git a/src/option.h b/src/option.h
+index 646056bf1..28b7b4402 100644
+--- a/src/option.h
++++ b/src/option.h
+@@ -306,7 +306,8 @@ typedef enum {
+ #define GO_VERTICAL	'v'		// arrange dialog buttons vertically
+ #define GO_KEEPWINSIZE	'k'		// keep GUI window size
+ // all possible flags for 'go'
+-#define GO_ALL		"!aAbcdefFghilLmMpPrRtTvk"
++#define GO_NOCAPTION	'C'		// remove caption bar
++#define GO_ALL		"!aAbcCdefFghilLmMpPrRtTvk"
+ 
+ // flags for 'comments' option
+ #define COM_NEST	'n'		// comments strings nest
+diff --git a/src/optionstr.c b/src/optionstr.c
+index 65a80afe1..385ec9f84 100644
+--- a/src/optionstr.c
++++ b/src/optionstr.c
+@@ -16,7 +16,11 @@
+ static char_u shm_buf[SHM_LEN];
+ static int set_shm_recursive = 0;
+ 
+-static char *(p_ambw_values[]) = {"single", "double", NULL};
++static char *(p_ambw_values[]) = {"single", "double",
++# ifdef USE_AMBIWIDTH_AUTO
++    "auto",
++# endif
++    NULL};
+ static char *(p_bg_values[]) = {"light", "dark", NULL};
+ static char *(p_bkc_values[]) = {"yes", "auto", "no", "breaksymlink", "breakhardlink", NULL};
+ static char *(p_bo_values[]) = {"all", "backspace", "cursor", "complete",
+diff --git a/src/proto/gui_w32.pro b/src/proto/gui_w32.pro
+index c5c6585db..67641254c 100644
+--- a/src/proto/gui_w32.pro
++++ b/src/proto/gui_w32.pro
+@@ -61,6 +61,7 @@ void gui_mch_settitle(char_u *title, char_u *icon);
+ void mch_set_mouse_shape(int shape);
+ char_u *gui_mch_browse(int saving, char_u *title, char_u *dflt, char_u *ext, char_u *initdir, char_u *filter);
+ char_u *gui_mch_browsedir(char_u *title, char_u *initdir);
++void gui_mch_show_caption(int show);
+ void gui_mch_set_parent(char *title);
+ char *gui_mch_do_spawn(char_u *arg);
+ void gui_mch_prepare(int *argc, char **argv);
+@@ -77,6 +78,7 @@ void im_set_active(int active);
+ int im_get_status(void);
+ void gui_mch_draw_string(int row, int col, char_u *text, int len, int flags);
+ void gui_mch_flush(void);
++int gui_mch_get_charwidth(int c);
+ void gui_mch_get_screen_dimensions(int *screen_w, int *screen_h);
+ void gui_mch_add_menu(vimmenu_T *menu, int pos);
+ void gui_mch_show_popupmenu(vimmenu_T *menu);
+diff --git a/src/vim.h b/src/vim.h
+index e41dfef01..a65432a8e 100644
+--- a/src/vim.h
++++ b/src/vim.h
+@@ -544,6 +544,13 @@ typedef long long vimlong_T;
+ # endif
+ #endif
+ 
++/*
++ * Whether 'ambiwidth' supports "auto".  Currently, only for Win32.
++ */
++#if defined(FEAT_GUI) && defined(FEAT_GUI_MSWIN)
++# define USE_AMBIWIDTH_AUTO
++#endif
++
+ /*
+  * For dynamically loaded gettext library.  Currently, only for Win32.
+  */
