@@ -40,6 +40,7 @@ if has("gui_running")
   highlight Number       guifg=lightred
   highlight WarningMsg   guifg=red
   highlight TabLineSel   guifg=red
+  highlight DiffText     guibg=DarkRed
   highlight CursorLine   guibg=#333333
   highlight Pmenu        guibg=#004400
   if has('multi_byte_ime')
