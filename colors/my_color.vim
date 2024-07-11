@@ -88,6 +88,10 @@ highlight rstSections ctermfg=cyan  cterm=bold
 "========= ruby ============
 highlight rubyConstant ctermfg=yellow  cterm=bold
 
+"========= java ============
+highlight link javaConceptKind javaStorageClass
+
+
 "========= javascript ============
 highlight javaScriptValue ctermfg=magenta guifg=lightred
 
