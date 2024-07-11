@@ -1,0 +1,5 @@
+# set this file path to CLANG_FORMAT_STYLE
+
+BasedOnStyle: Google
+IndentWidth: 4
+BreakBeforeBraces: Attach
