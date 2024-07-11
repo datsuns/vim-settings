@@ -18,7 +18,7 @@ nnoremap <Space>cs    :nohlsearch<CR>
 map <silent> * :let @/="\\<<c-r><c-w>\\>"<CR>:set hls<CR>
 
 "noremap <silent> <Space>ev :edit ~/.vim<CR>
-noremap <silent> <Space>ed :edit ~/Desktop<CR>
+noremap <silent> <Space>ed :edit ~/desktop<CR>
 noremap <silent> <Space>ew :edit ~/work<CR>
 " open directory of current buffer
 "map ,e :e <C-R>=expand("%:p:h") . "/" <CR>
