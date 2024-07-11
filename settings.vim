@@ -50,7 +50,7 @@ let g:Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
 "{{{golang
 
 "{{{mattn/vim-goimports
-  let g:goimports = 0
+  let g:goimports = 1
   let g:goimports_simplify = 0
 "}}}
 
