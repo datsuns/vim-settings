@@ -34,7 +34,7 @@ let g:lsp_diagnostics_enabled              = 1
 let g:lsp_diagnostics_echo_cursor          = 1
 let g:lsp_diagnostics_highlights_enabled   = 0
 let g:lsp_diagnostics_signs_enabled        = 1
-let g:lsp_diagnostics_virtual_text_enabled = 1
+let g:lsp_diagnostics_virtual_text_enabled = 0
 let g:lsp_diagnostics_virtual_text_align   = "after"
 let g:lsp_diagnostics_virtual_text_wrap    = "truncate"
 let g:lsp_diagnostics_virtual_text_padding_left = 4
@@ -47,6 +47,9 @@ let g:asyncomplete_min_chars               = 0
 augroup MyLspAutoCommand
   autocmd!
   autocmd BufWritePre *.go     call execute('LspDocumentFormatSync') | call execute('LspCodeActionSync source.organizeImports')
+  autocmd BufWritePre *.cpp    :execute("LspDocumentFormatSync")
+  autocmd BufWritePre *.h      :execute("LspDocumentFormatSync")
+  autocmd BufWritePre *.c      :execute("LspDocumentFormatSync")
   autocmd BufWritePre *.rs     :execute("LspDocumentFormatSync")
   autocmd BufWritePre *.svelte :execute("LspDocumentFormatSync")
   autocmd BufWritePre *.py     :execute("LspDocumentFormatSync")
