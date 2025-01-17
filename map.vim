@@ -142,3 +142,10 @@ augroup END
   autocmd FileType molder map <buffer> h <Plug>(molder-up)
   autocmd FileType molder map <buffer> <F5> <Plug>(molder-reload)
 "}}}
+
+"{{{copilot
+function! s:pseudo_function_to_trigger_copilot()
+  call plug#load('copilot.vim')
+endfunction
+nnoremap <silent> <Space>cp  :call <SID>pseudo_function_to_trigger_copilot()<CR>
+"}}}

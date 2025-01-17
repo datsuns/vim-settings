@@ -1,3 +1,4 @@
+
 call plug#begin(g:my_home_directory . '/plug_repo')
 
 Plug 'itchyny/lightline.vim'
@@ -41,6 +42,10 @@ Plug 'mattn/vim-molder'
 "Plug 'mattn/vim-molder-operations'
 "Plug 'hrsh7th/vim-vsnip'
 "Plug 'hrsh7th/vim-vsnip-integ'
+
+
+" manually loading
+Plug 'github/copilot.vim', { 'on': [] }
 
 "my
 "Plug 'datsuns/vim-go-openimport', { 'for': 'go' }
