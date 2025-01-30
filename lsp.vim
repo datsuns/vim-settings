@@ -21,6 +21,9 @@ augroup lsp_install
   au!
   autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 augroup END
+
+" let g:lsp_log_verbose = 1
+" let g:lsp_log_file    = expand('~/desktop/lsp.log')
 command! LspDebug let lsp_log_verbose=1 | let lsp_log_file = expand('~/desktop/lsp.log')
 
 let g:lsp_auto_enable                      = 1
@@ -55,10 +58,16 @@ augroup MyLspAutoCommand
   autocmd BufWritePre *.py     :execute("LspDocumentFormatSync")
 augroup END
 
-"let lsp_log_verbose=1
-"let lsp_log_file = expand('~/lsp.log')
 
+" cpp: gcc -xc++ -E -v -
 let g:lsp_settings = {
+\   'clangd': {
+\     'args': [
+\           '--compile-commands-dir=/dev/null',
+\           '--background-index',
+\           '--clang-tidy',
+\      ]
+\   },
 \   'pylsp-all': {
 \     'workspace_config': {
 \       'pylsp': {
