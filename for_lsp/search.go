@@ -2,7 +2,6 @@ package main
 
 import (
 	"bytes"
-	"fmt"
 	"io/fs"
 	"os"
 	"os/exec"
@@ -67,7 +66,6 @@ func collectHeaderFileDirs(root string) []string {
 		if d.IsDir() {
 			for _, d := range forceDirectories {
 				if strings.Compare(filepath.Base(abs), d) == 0 {
-					fmt.Println(filepath.ToSlash(abs))
 					all = append(all, filepath.ToSlash(abs))
 					break
 				}
