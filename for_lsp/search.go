@@ -2,6 +2,7 @@ package main
 
 import (
 	"bytes"
+	"fmt"
 	"io/fs"
 	"os"
 	"os/exec"
@@ -11,10 +12,13 @@ import (
 	"strings"
 )
 
-const destFilename = "_compile_flags.gen.txt"
+const destFilename = "_compile_flags.txt"
 
 var staticOptions = []string{
 	"-std=c++20",
+}
+var forceDirectories = []string{
+	"include",
 }
 var headerFileKey = regexp.MustCompile("\\.(h|hxx|hpp)$")
 
@@ -56,15 +60,22 @@ func collectCompilerSeachPaths(dummyFile string) []string {
 func collectHeaderFileDirs(root string) []string {
 	all := []string{}
 	filepath.WalkDir(root, func(path string, d fs.DirEntry, err error) error {
+		abs, err := filepath.Abs(path)
+		if err != nil {
+			return nil
+		}
 		if d.IsDir() {
+			for _, d := range forceDirectories {
+				if strings.Compare(filepath.Base(abs), d) == 0 {
+					fmt.Println(filepath.ToSlash(abs))
+					all = append(all, filepath.ToSlash(abs))
+					break
+				}
+			}
 			return nil
 		}
 		ext := filepath.Ext(path)
 		if !headerFileKey.MatchString(ext) {
-			return nil
-		}
-		abs, err := filepath.Abs(path)
-		if err != nil {
 			return nil
 		}
 		all = append(all, filepath.ToSlash(filepath.Dir(abs)))
