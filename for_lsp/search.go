@@ -19,6 +19,9 @@ var staticOptions = []string{
 var forceDirectories = []string{
 	"include",
 }
+var ros2Specials = []*regexp.Regexp{
+	regexp.MustCompile("include[\\\\/].*[\\\\/]msg$"),
+}
 var headerFileKey = regexp.MustCompile("\\.(h|hxx|hpp)$")
 
 func executeWithDummyInput(tool string, params []string) (string, error) {
@@ -67,6 +70,14 @@ func collectHeaderFileDirs(root string) []string {
 			for _, d := range forceDirectories {
 				if strings.Compare(filepath.Base(abs), d) == 0 {
 					all = append(all, filepath.ToSlash(abs))
+					break
+				}
+			}
+			for _, key := range ros2Specials {
+				if key.MatchString(abs) {
+					relative := filepath.Join(abs, "..", "..")
+					target := filepath.Clean(relative)
+					all = append(all, filepath.ToSlash(target))
 					break
 				}
 			}
