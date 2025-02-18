@@ -16,6 +16,7 @@ const destFilename = "_compile_flags.txt"
 
 var staticOptions = []string{
 	"-std=c++20",
+	"-U_GLIBCXX_USE_FLOAT128", // よくわからんけどundefが必要そう
 }
 var forceDirectories = []string{
 	"include",
