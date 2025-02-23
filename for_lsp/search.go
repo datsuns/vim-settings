@@ -2,6 +2,7 @@ package main
 
 import (
 	"bytes"
+	"fmt"
 	"io/fs"
 	"os"
 	"os/exec"
@@ -15,6 +16,7 @@ const destFilename = "_compile_flags.txt"
 
 var staticOptions = []string{
 	"-std=c++20",
+	"-U_GLIBCXX_USE_FLOAT128", // よくわからんけどundefが必要そう
 }
 var forceDirectories = []string{
 	"include",
@@ -59,6 +61,26 @@ func collectCompilerSeachPaths(dummyFile string) []string {
 	return paths
 }
 
+func collectCompilerDefaultDefines() []string {
+	_, err := exec.LookPath("g++")
+	if err != nil {
+		return []string{}
+	}
+	log, _ := executeWithDummyInput("g++", []string{"-dM", "-E", "-"})
+	lineFeeds := regexp.MustCompile(`[\r\n]`)
+	defines := []string{}
+	for _, line := range strings.Split(log, "\n") {
+		line = lineFeeds.ReplaceAllString(line, "")
+		params := strings.Split(line, " ")
+		if len(params) != 3 {
+			continue
+		}
+
+		defines = append(defines, fmt.Sprintf("%v=%v", params[1], params[2]))
+	}
+	return defines
+}
+
 func collectHeaderFileDirs(root string) []string {
 	all := []string{}
 	filepath.WalkDir(root, func(path string, d fs.DirEntry, err error) error {
@@ -97,6 +119,7 @@ func collectHeaderFileDirs(root string) []string {
 func main() {
 	root := os.Args[1]
 	compilerPaths := collectCompilerSeachPaths(os.Args[0])
+	compilerDefines := collectCompilerDefaultDefines()
 	headerPaths := collectHeaderFileDirs(root)
 	dest, err := os.Create(destFilename)
 	if err != nil {
@@ -105,6 +128,9 @@ func main() {
 	defer dest.Close()
 	for _, opt := range staticOptions {
 		dest.WriteString(opt + "\n")
+	}
+	for _, opt := range compilerDefines {
+		dest.WriteString("-D" + opt + "\n")
 	}
 	for _, path := range compilerPaths {
 		dest.WriteString("-I" + path + "\n")
