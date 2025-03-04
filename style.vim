@@ -15,6 +15,10 @@ set matchtime=2
 set cmdheight=1
 set showcmd
 set belloff=all
+set nospell " replace to spelunker.vim
+"set spell
+set spelllang+=cjk
+set updatetime=1000
 
 if has("win32") && has("gui_running")
   " w/ kaoriya patch 2005-ambiwidth_auto.diff
