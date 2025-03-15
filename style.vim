@@ -19,6 +19,7 @@ set nospell " replace to spelunker.vim
 "set spell
 set spelllang+=cjk
 set updatetime=1000
+set formatoptions-=ro
 
 if has("win32") && has("gui_running")
   " w/ kaoriya patch 2005-ambiwidth_auto.diff
