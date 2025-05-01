@@ -115,6 +115,7 @@ augroup MyDartSetting
 	autocmd!
   autocmd BufWritePost *.dart   :execute("DartFmt")
 augroup END
+let g:dartfmt_options = ['--line-length 120']
 "}}}
 
 "{{{molder
