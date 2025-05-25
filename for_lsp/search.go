@@ -35,7 +35,7 @@ func executeWithDummyInput(tool string, params []string) (string, error) {
 	return string(log), nil
 }
 
-func collectCompilerSeachPaths(dummyFile string) []string {
+func collectCompilerSearchPaths(dummyFile string) []string {
 	_, err := exec.LookPath("gcc")
 	if err != nil {
 		return []string{}
@@ -119,7 +119,7 @@ func collectHeaderFileDirs(root string) []string {
 
 func main() {
 	root := os.Args[1]
-	compilerPaths := collectCompilerSeachPaths(os.Args[0])
+	compilerPaths := collectCompilerSearchPaths(os.Args[0])
 	compilerDefines := collectCompilerDefaultDefines()
 	headerPaths := collectHeaderFileDirs(root)
 	dest, err := os.Create(destFilename)
