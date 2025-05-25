@@ -112,7 +112,7 @@ func collectHeaderFileDirs(root string) []string {
 			}
 			return nil
 		} else {
-			ext := filepath.Ext(path)
+			ext := filepath.Ext(abs)
 			if !headerFileKey.MatchString(ext) {
 				return nil
 			}
