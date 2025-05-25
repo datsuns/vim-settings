@@ -56,3 +56,5 @@ set foldmethod=marker
 set backspace=indent,eol,start
 set noruler
 set nrformats-=octal
+
+set shell=$HOME/scoop/shims/bash.exe
