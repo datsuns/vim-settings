@@ -82,6 +82,22 @@ func collectCompilerDefaultDefines() []string {
 	return defines
 }
 
+func fitDirectoryEntry(path string) (bool, string) {
+	for _, d := range forceDirectories {
+		if strings.Compare(filepath.Base(path), d) == 0 {
+			return true, filepath.ToSlash(path)
+		}
+	}
+	for _, key := range ros2Specials {
+		if key.MatchString(path) {
+			relative := filepath.Join(path, "..", "..")
+			target := filepath.Clean(relative)
+			return true, filepath.ToSlash(target)
+		}
+	}
+	return false, ""
+}
+
 func collectHeaderFileDirs(root string) []string {
 	all := []string{}
 	filepath.WalkDir(root, func(path string, d fs.DirEntry, err error) error {
@@ -90,19 +106,9 @@ func collectHeaderFileDirs(root string) []string {
 			return nil
 		}
 		if d.IsDir() {
-			for _, d := range forceDirectories {
-				if strings.Compare(filepath.Base(abs), d) == 0 {
-					all = append(all, filepath.ToSlash(abs))
-					break
-				}
-			}
-			for _, key := range ros2Specials {
-				if key.MatchString(abs) {
-					relative := filepath.Join(abs, "..", "..")
-					target := filepath.Clean(relative)
-					all = append(all, filepath.ToSlash(target))
-					break
-				}
+			found, dir := fitDirectoryEntry(abs)
+			if found {
+				all = append(all, dir)
 			}
 			return nil
 		}
