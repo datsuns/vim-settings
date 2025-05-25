@@ -15,6 +15,7 @@ import (
 const destFilename = "_compile_flags.txt"
 
 var staticOptions = []string{
+	"--target=x86_64-w64-mingw32",
 	"-std=c++20",
 	"-U_GLIBCXX_USE_FLOAT128", // よくわからんけどundefが必要そう
 }
