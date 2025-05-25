@@ -111,12 +111,13 @@ func collectHeaderFileDirs(root string) []string {
 				all = append(all, dir)
 			}
 			return nil
+		} else {
+			ext := filepath.Ext(path)
+			if !headerFileKey.MatchString(ext) {
+				return nil
+			}
+			all = append(all, filepath.ToSlash(filepath.Dir(abs)))
 		}
-		ext := filepath.Ext(path)
-		if !headerFileKey.MatchString(ext) {
-			return nil
-		}
-		all = append(all, filepath.ToSlash(filepath.Dir(abs)))
 		return nil
 	})
 	slices.Sort(all)
