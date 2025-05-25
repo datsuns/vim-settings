@@ -56,6 +56,7 @@ augroup MyLspAutoCommand
   autocmd BufWritePre *.rs     :execute("LspDocumentFormatSync")
   autocmd BufWritePre *.svelte :execute("LspDocumentFormatSync")
   autocmd BufWritePre *.py     :execute("LspDocumentFormatSync")
+  autocmd BufWritePre *.cs     :execute("LspDocumentFormatSync")
 augroup END
 
 

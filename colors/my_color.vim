@@ -47,6 +47,8 @@ if has("gui_running")
      highlight Cursor   guifg=NONE guibg=Green
      highlight CursorIM guifg=NONE guibg=Purple
   endif
+  highlight SpelunkerSpellBad gui=underline guifg=#9e9e9e
+  highlight SpelunkerComplexOrCompoundWord gui=underline guifg=NONE
 endif
 
 " Console
@@ -80,6 +82,8 @@ if has('multi_byte_ime')
   highlight Cursor   ctermfg=NONE ctermbg=Green
   highlight CursorIM ctermfg=NONE ctermbg=magenta
 endif
+highlight SpelunkerSpellBad cterm=underline ctermfg=247
+highlight SpelunkerComplexOrCompoundWord cterm=underline ctermfg=NONE
 
 
 "========= RST ============

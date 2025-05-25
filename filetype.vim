@@ -38,3 +38,6 @@ au BufNewFile,BufRead *.src		setf asm
 
 " nu
 au BufNewFile,BufRead *.nu,*.nujson,Nukefile    setf nu
+
+" Google App Script
+au BufNewFile,BufRead *.gs    setf javascript

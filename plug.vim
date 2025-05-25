@@ -11,6 +11,7 @@ Plug 'previm/previm'
 Plug 'tyru/open-browser.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mattn/ctrlp-matchfuzzy'
+Plug 'KSR-Yasuda/spelunker.vim',  { 'branch': 'develop'}
 
 " for *lang
 Plug 'cespare/vim-toml',          { 'for': 'toml' }
