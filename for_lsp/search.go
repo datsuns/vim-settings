@@ -13,6 +13,7 @@ import (
 )
 
 const destFilename = "_compile_flags.txt"
+const duplicatedHeaders = "_duplicated_headers.txt"
 
 var staticOptions = []string{
 	"--target=x86_64-w64-mingw32",
@@ -98,8 +99,11 @@ func fitDirectoryEntry(path string) (bool, string) {
 	return false, ""
 }
 
-func collectHeaderFileDirs(root string) []string {
+type AllHeaders map[string][]string
+
+func collectHeaderFileDirs(root string) ([]string, AllHeaders) {
 	all := []string{}
+	headers := AllHeaders{}
 	filepath.WalkDir(root, func(path string, d fs.DirEntry, err error) error {
 		abs, err := filepath.Abs(path)
 		if err != nil {
@@ -116,24 +120,32 @@ func collectHeaderFileDirs(root string) []string {
 			if !headerFileKey.MatchString(ext) {
 				return nil
 			}
+			fname := filepath.Base(abs)
+			headers[fname] = append(headers[fname], abs)
 			all = append(all, filepath.ToSlash(filepath.Dir(abs)))
 		}
 		return nil
 	})
 	slices.Sort(all)
-	return slices.Compact(all)
+	return slices.Compact(all), headers
 }
 
 func main() {
 	root := os.Args[1]
 	compilerPaths := collectCompilerSearchPaths()
 	compilerDefines := collectCompilerDefaultDefines()
-	headerPaths := collectHeaderFileDirs(root)
+	headerPaths, allHaders := collectHeaderFileDirs(root)
 	dest, err := os.Create(destFilename)
 	if err != nil {
 		panic(err)
 	}
 	defer dest.Close()
+	duplicated, err := os.Create(duplicatedHeaders)
+	if err != nil {
+		panic(err)
+	}
+	defer duplicated.Close()
+
 	for _, opt := range staticOptions {
 		dest.WriteString(opt + "\n")
 	}
@@ -145,5 +157,13 @@ func main() {
 	}
 	for _, path := range headerPaths {
 		dest.WriteString("-I" + path + "\n")
+	}
+	for name, list := range allHaders {
+		if len(list) > 1 {
+			duplicated.WriteString(fmt.Sprintf("duplicated header [%v]\n", name))
+			for _, header := range list {
+				duplicated.WriteString(fmt.Sprintf("  - %v\n", header))
+			}
+		}
 	}
 }
