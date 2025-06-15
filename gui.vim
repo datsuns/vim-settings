@@ -7,8 +7,8 @@ if has("win32")
   autocmd GUIEnter * simalt ~x
 else
   "set fuoptions=maxvert,maxhorz
-  au GUIEnter * set fullscreen
-  set guifont=Menlo\ Regular:h26
+  "au GUIEnter * set fullscreen
+  set guifont=MyricaM\ M\ 20
 endif
 set guioptions-=b
 set guioptions-=l

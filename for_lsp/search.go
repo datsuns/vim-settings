@@ -13,8 +13,10 @@ import (
 )
 
 const destFilename = "_compile_flags.txt"
+const duplicatedHeaders = "_duplicated_headers.txt"
 
 var staticOptions = []string{
+	"--target=x86_64-w64-mingw32",
 	"-std=c++20",
 	"-U_GLIBCXX_USE_FLOAT128", // よくわからんけどundefが必要そう
 }
@@ -34,7 +36,7 @@ func executeWithDummyInput(tool string, params []string) (string, error) {
 	return string(log), nil
 }
 
-func collectCompilerSeachPaths(dummyFile string) []string {
+func collectCompilerSearchPaths() []string {
 	_, err := exec.LookPath("gcc")
 	if err != nil {
 		return []string{}
@@ -81,51 +83,69 @@ func collectCompilerDefaultDefines() []string {
 	return defines
 }
 
-func collectHeaderFileDirs(root string) []string {
+func fitDirectoryEntry(path string) (bool, string) {
+	for _, d := range forceDirectories {
+		if strings.Compare(filepath.Base(path), d) == 0 {
+			return true, filepath.ToSlash(path)
+		}
+	}
+	for _, key := range ros2Specials {
+		if key.MatchString(path) {
+			relative := filepath.Join(path, "..", "..")
+			target := filepath.Clean(relative)
+			return true, filepath.ToSlash(target)
+		}
+	}
+	return false, ""
+}
+
+type AllHeaders map[string][]string
+
+func collectHeaderFileDirs(root string) ([]string, AllHeaders) {
 	all := []string{}
+	headers := AllHeaders{}
 	filepath.WalkDir(root, func(path string, d fs.DirEntry, err error) error {
 		abs, err := filepath.Abs(path)
 		if err != nil {
 			return nil
 		}
 		if d.IsDir() {
-			for _, d := range forceDirectories {
-				if strings.Compare(filepath.Base(abs), d) == 0 {
-					all = append(all, filepath.ToSlash(abs))
-					break
-				}
-			}
-			for _, key := range ros2Specials {
-				if key.MatchString(abs) {
-					relative := filepath.Join(abs, "..", "..")
-					target := filepath.Clean(relative)
-					all = append(all, filepath.ToSlash(target))
-					break
-				}
+			found, dir := fitDirectoryEntry(abs)
+			if found {
+				all = append(all, dir)
 			}
 			return nil
+		} else {
+			ext := filepath.Ext(abs)
+			if !headerFileKey.MatchString(ext) {
+				return nil
+			}
+			fname := filepath.Base(abs)
+			headers[fname] = append(headers[fname], abs)
+			all = append(all, filepath.ToSlash(filepath.Dir(abs)))
 		}
-		ext := filepath.Ext(path)
-		if !headerFileKey.MatchString(ext) {
-			return nil
-		}
-		all = append(all, filepath.ToSlash(filepath.Dir(abs)))
 		return nil
 	})
 	slices.Sort(all)
-	return slices.Compact(all)
+	return slices.Compact(all), headers
 }
 
 func main() {
 	root := os.Args[1]
-	compilerPaths := collectCompilerSeachPaths(os.Args[0])
+	compilerPaths := collectCompilerSearchPaths()
 	compilerDefines := collectCompilerDefaultDefines()
-	headerPaths := collectHeaderFileDirs(root)
+	headerPaths, allHaders := collectHeaderFileDirs(root)
 	dest, err := os.Create(destFilename)
 	if err != nil {
 		panic(err)
 	}
 	defer dest.Close()
+	duplicated, err := os.Create(duplicatedHeaders)
+	if err != nil {
+		panic(err)
+	}
+	defer duplicated.Close()
+
 	for _, opt := range staticOptions {
 		dest.WriteString(opt + "\n")
 	}
@@ -137,5 +157,13 @@ func main() {
 	}
 	for _, path := range headerPaths {
 		dest.WriteString("-I" + path + "\n")
+	}
+	for name, list := range allHaders {
+		if len(list) > 1 {
+			duplicated.WriteString(fmt.Sprintf("duplicated header [%v]\n", name))
+			for _, header := range list {
+				duplicated.WriteString(fmt.Sprintf("  - %v\n", header))
+			}
+		}
 	}
 }
