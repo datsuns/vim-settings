@@ -14,7 +14,9 @@ function! s:on_lsp_buffer_enabled() abort
   nmap <buffer> <f2> <plug>(lsp-rename)
   inoremap <expr> <cr> pumvisible() ? "\<c-y>\<cr>" : "\<cr>"
   nnoremap <buffer> <expr><c-j> lsp#scroll(+2)
+  nnoremap <buffer> <expr><f3>  lsp#scroll(+2)
   nnoremap <buffer> <expr><c-k> lsp#scroll(-2)
+  nnoremap <buffer> <expr><f4>  lsp#scroll(-2)
 endfunction
 
 augroup lsp_install
