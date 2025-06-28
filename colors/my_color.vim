@@ -78,6 +78,7 @@ highlight Directory    ctermfg=cyan
 highlight WarningMsg   ctermfg=red
 highlight DiffText                      ctermbg=darkred
 highlight TabLineSel   ctermfg=red
+highlight Pmenu        ctermfg=white    ctermbg=235
 if has('multi_byte_ime')
   highlight Cursor   ctermfg=NONE ctermbg=Green
   highlight CursorIM ctermfg=NONE ctermbg=magenta
