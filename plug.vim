@@ -1,3 +1,4 @@
+packadd! termdebug
 
 call plug#begin(g:my_home_directory . '/plug_repo')
 

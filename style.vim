@@ -61,3 +61,4 @@ set nrformats-=octal
 
 "plug.vimのコマンド実行に影響する
 "set shell=$HOME/scoop/shims/bash.exe
+
