@@ -18,6 +18,7 @@ const duplicatedHeaders = "_duplicated_headers.txt"
 var staticOptions = []string{
 	"--target=x86_64-w64-mingw32",
 	"-std=c++20",
+	"-xc++",
 	"-U_GLIBCXX_USE_FLOAT128", // よくわからんけどundefが必要そう
 }
 var forceDirectories = []string{
