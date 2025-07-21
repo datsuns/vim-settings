@@ -25,7 +25,7 @@ let g:quickrun_config = {}
 let g:quickrun_config['_'] = {
       \ 'outputter/buffer/split': 'split',
       \ 'runner' : 'job',
-      \ 'outputter/buffer/into': '1'
+      \ 'outputter/buffer/into': '0'
       \}
 let g:quickrun_config['ruby.rspec'] = {'command': 'rspec', 'args': '-fd --color'}
 let g:quickrun_config['ruby.unittest'] = {'command': 'rake', 'args': 'test:units'}
