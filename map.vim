@@ -11,9 +11,15 @@ noremap  H zh
 noremap  <Space>w :w <CR>
 nmap gf gF
 nnoremap <silent> <Space>gf  :tabedit <C-r><C-F><CR>
-noremap  <Space>y "*y<CR>
-noremap  <Space>Y "*Y<CR>
-noremap  <Space>p "*p<CR>
+if has('win32')
+  noremap  <Space>y "*y<CR>
+  noremap  <Space>Y "*Y<CR>
+  noremap  <Space>p "*p<CR>
+else
+  noremap  <Space>y "+y<CR>
+  noremap  <Space>Y "+Y<CR>
+  noremap  <Space>p "+p<CR>
+endif
 nnoremap <Space>cs    :nohlsearch<CR>
 map <silent> * :let @/="\\<<c-r><c-w>\\>"<CR>:set hls<CR>
 
