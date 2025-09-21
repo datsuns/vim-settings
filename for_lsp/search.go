@@ -38,11 +38,11 @@ func executeWithDummyInput(tool string, params []string) (string, error) {
 }
 
 func collectCompilerSearchPaths() []string {
-	_, err := exec.LookPath("gcc")
+	_, err := exec.LookPath("g++")
 	if err != nil {
 		return []string{}
 	}
-	log, _ := executeWithDummyInput("gcc", []string{"-xc++", "-E", "-v", "-"})
+	log, _ := executeWithDummyInput("g++", []string{"-xc++", "-E", "-v", "-"})
 	body := false
 	lineFeeds := regexp.MustCompile(`[\r\n]`)
 	paths := []string{}
@@ -58,7 +58,8 @@ func collectCompilerSearchPaths() []string {
 		}
 
 		if body {
-			paths = append(paths, strings.TrimSpace(filepath.ToSlash(line)))
+			path := fmt.Sprintf("\"%v\"", strings.TrimSpace(filepath.ToSlash(line)))
+			paths = append(paths, path)
 		}
 	}
 	return paths
