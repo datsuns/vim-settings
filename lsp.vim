@@ -31,6 +31,7 @@ command! LspDebug let lsp_log_verbose=1 | let lsp_log_file = expand('~/desktop/l
 let g:lsp_auto_enable                      = 1
 let g:lsp_preview_keep_focus               = 1
 let g:lsp_preview_float                    = 1
+let g:lsp_diagnostics_float_cursor         = 1
 let g:lsp_preview_autoclose                = 1
 let g:lsp_insert_text_enabled              = 1
 let g:lsp_text_edit_enabled                = 1
@@ -64,6 +65,12 @@ augroup END
 
 " cpp: gcc -xc++ -E -v -
 let g:lsp_settings = {
+\   'efm-langserver': {
+\    'disabled': 0,
+\    'allowlist': [
+\       "markdown",
+\      ]
+\   },
 \   'clangd': {
 \     'args': [
 \           '--compile-commands-dir=/dev/null',
