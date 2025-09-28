@@ -11,6 +11,7 @@ function! s:on_lsp_buffer_enabled() abort
   nmap <buffer> gr <plug>(lsp-references)
   nmap <buffer> gi <plug>(lsp-implementation))
   nmap <buffer> gt <plug>(lsp-type-definition))
+  nmap <buffer> gl :LspDocumentDiagnostics<CR>
   nmap <buffer> <f2> <plug>(lsp-rename)
   inoremap <expr> <cr> pumvisible() ? "\<c-y>\<cr>" : "\<cr>"
   nnoremap <buffer> <expr><c-j> lsp#scroll(+2)
@@ -31,13 +32,13 @@ command! LspDebug let lsp_log_verbose=1 | let lsp_log_file = expand('~/desktop/l
 let g:lsp_auto_enable                      = 1
 let g:lsp_preview_keep_focus               = 1
 let g:lsp_preview_float                    = 1
-let g:lsp_diagnostics_float_cursor         = 1
+let g:lsp_diagnostics_float_cursor         = 0
 let g:lsp_preview_autoclose                = 1
 let g:lsp_insert_text_enabled              = 1
 let g:lsp_text_edit_enabled                = 1
 let g:lsp_completion_documentation_enabled = 1
 let g:lsp_diagnostics_enabled              = 1
-let g:lsp_diagnostics_echo_cursor          = 1
+let g:lsp_diagnostics_echo_cursor          = 0
 let g:lsp_diagnostics_highlights_enabled   = 0
 let g:lsp_diagnostics_signs_enabled        = 1
 let g:lsp_diagnostics_virtual_text_enabled = 0
@@ -52,14 +53,14 @@ let g:asyncomplete_min_chars               = 0
 
 augroup MyLspAutoCommand
   autocmd!
-  autocmd BufWritePre *.go     call execute('LspDocumentFormatSync') | call execute('LspCodeActionSync source.organizeImports')
-  autocmd BufWritePre *.cpp    :execute("LspDocumentFormatSync")
-  autocmd BufWritePre *.h      :execute("LspDocumentFormatSync")
-  autocmd BufWritePre *.c      :execute("LspDocumentFormatSync")
-  autocmd BufWritePre *.rs     :execute("LspDocumentFormatSync")
-  autocmd BufWritePre *.svelte :execute("LspDocumentFormatSync")
-  autocmd BufWritePre *.py     :execute("LspDocumentFormatSync")
-  autocmd BufWritePre *.cs     :execute("LspDocumentFormatSync")
+  autocmd BufWritePre *.go     call execute('LspDocumentFormat') | call execute('LspCodeActionSync source.organizeImports')
+  autocmd BufWritePre *.cpp    :execute("LspDocumentFormat")
+  autocmd BufWritePre *.h      :execute("LspDocumentFormat")
+  autocmd BufWritePre *.c      :execute("LspDocumentFormat")
+  autocmd BufWritePre *.rs     :execute("LspDocumentFormat")
+  autocmd BufWritePre *.svelte :execute("LspDocumentFormat")
+  autocmd BufWritePre *.py     :execute("LspDocumentFormat")
+  autocmd BufWritePre *.cs     :execute("LspDocumentFormat")
 augroup END
 
 
