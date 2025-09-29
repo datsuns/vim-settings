@@ -53,15 +53,15 @@ let g:asyncomplete_min_chars               = 0
 
 augroup MyLspAutoCommand
   autocmd!
-  autocmd BufWritePre *.go     call execute('LspDocumentFormat') | call execute('LspCodeActionSync source.organizeImports')
-  autocmd BufWritePre *.cpp    :execute("LspDocumentFormat")
-  autocmd BufWritePre *.cc     :execute("LspDocumentFormat")
-  autocmd BufWritePre *.h      :execute("LspDocumentFormat")
-  autocmd BufWritePre *.c      :execute("LspDocumentFormat")
-  autocmd BufWritePre *.rs     :execute("LspDocumentFormat")
-  autocmd BufWritePre *.svelte :execute("LspDocumentFormat")
-  autocmd BufWritePre *.py     :execute("LspDocumentFormat")
-  autocmd BufWritePre *.cs     :execute("LspDocumentFormat")
+  autocmd BufWritePre *.go     call execute('LspDocumentFormatSync') | call execute('LspCodeActionSync source.organizeImports')
+  autocmd BufWritePre *.cpp    :execute("LspDocumentFormatSync")
+  autocmd BufWritePre *.cc     :execute("LspDocumentFormatSync")
+  autocmd BufWritePre *.h      :execute("LspDocumentFormatSync")
+  autocmd BufWritePre *.c      :execute("LspDocumentFormatSync")
+  autocmd BufWritePre *.rs     :execute("LspDocumentFormatSync")
+  autocmd BufWritePre *.svelte :execute("LspDocumentFormatSync")
+  autocmd BufWritePre *.py     :execute("LspDocumentFormatSync")
+  autocmd BufWritePre *.cs     :execute("LspDocumentFormatSync")
 augroup END
 
 
