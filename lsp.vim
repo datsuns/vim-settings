@@ -55,6 +55,7 @@ augroup MyLspAutoCommand
   autocmd!
   autocmd BufWritePre *.go     call execute('LspDocumentFormat') | call execute('LspCodeActionSync source.organizeImports')
   autocmd BufWritePre *.cpp    :execute("LspDocumentFormat")
+  autocmd BufWritePre *.cc     :execute("LspDocumentFormat")
   autocmd BufWritePre *.h      :execute("LspDocumentFormat")
   autocmd BufWritePre *.c      :execute("LspDocumentFormat")
   autocmd BufWritePre *.rs     :execute("LspDocumentFormat")
