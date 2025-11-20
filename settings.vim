@@ -147,6 +147,10 @@ let g:rust_fold = 1
 let g:ctrlp_match_func = {'match': 'ctrlp_matchfuzzy#matcher'}
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_map = '<Space>f'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll|class)$',
+  \ }
 "}}}
 
 "{{{ binary
