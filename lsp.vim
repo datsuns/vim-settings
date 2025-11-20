@@ -66,7 +66,7 @@ augroup END
 
 
 " cpp: gcc -xc++ -E -v -
-let g:lsp_settings = {
+let g:lsp_settings = extend(get(g:, 'lsp_settings', {}), {
 \   'efm-langserver': {
 \    'disabled': 0,
 \    'allowlist': [
@@ -91,4 +91,4 @@ let g:lsp_settings = {
 \       }
 \     }
 \   },
-\}
+\})
