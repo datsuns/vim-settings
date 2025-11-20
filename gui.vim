@@ -3,7 +3,7 @@ colorscheme my_color
 if has("win32")
   set guifont=MyricaM_M:h20:cSHIFTJIS:qDRAFT
   set renderoptions=type:directx
-  set guioptions+=C
+  set guioptions+=z
   autocmd GUIEnter * simalt ~x
 else
   "set fuoptions=maxvert,maxhorz
