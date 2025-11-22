@@ -25,9 +25,9 @@ augroup lsp_install
   autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 augroup END
 
-" let g:lsp_log_verbose = 1
-" let g:lsp_log_file    = expand('~/desktop/lsp.log')
-command! LspDebug let lsp_log_verbose=1 | let lsp_log_file = expand('~/desktop/lsp.log')
+let g:lsp_log_verbose = 1
+let g:lsp_log_file    = expand('~/desktop/lsp.log')
+command! LspDebug let lsp_log_verbose=1 | let lsp_log_file = expand('~/desktop/lsp.log') | let g:asyncomplete_log_file = expand('~/asyncomplete.log')
 
 let g:lsp_auto_enable                      = 1
 let g:lsp_preview_keep_focus               = 1
@@ -50,6 +50,9 @@ let g:asyncomplete_auto_popup              = 1
 let g:asyncomplete_auto_completeopt        = 1
 let g:asyncomplete_popup_delay             = 0
 let g:asyncomplete_min_chars               = 0
+
+" experimental feature
+let g:lsp_experimental_workspace_folders   = 0
 
 augroup MyLspAutoCommand
   autocmd!
@@ -90,5 +93,13 @@ let g:lsp_settings = extend(get(g:, 'lsp_settings', {}), {
 \         }
 \       }
 \     }
+\   },
+\   'eclipse-jdt-ls': {
+\     'root_uri': { server_info->lsp#utils#path_to_uri(
+\       lsp#utils#find_nearest_parent_file_directory(
+\         lsp#utils#get_buffer_path(),
+\         ['.git/', 'gradlew'] 
+\       )
+\     )},
 \   },
 \})
