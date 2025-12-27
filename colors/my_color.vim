@@ -73,7 +73,6 @@ highlight Label        ctermfg=yellow
 highlight Number       ctermfg=magenta
 highlight Repeat       ctermfg=blue                  cterm=bold
 highlight Operator     ctermfg=cyan
-highlight cppOperator  ctermfg=cyan
 highlight Directory    ctermfg=cyan
 highlight WarningMsg   ctermfg=red
 highlight DiffText                      ctermbg=darkred
