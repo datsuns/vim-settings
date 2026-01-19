@@ -25,8 +25,8 @@ augroup lsp_install
   autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 augroup END
 
-let g:lsp_log_verbose = 1
-let g:lsp_log_file    = expand('~/desktop/lsp.log')
+" let g:lsp_log_verbose = 1
+" let g:lsp_log_file    = expand('~/desktop/lsp.log')
 command! LspDebug let lsp_log_verbose=1 | let lsp_log_file = expand('~/desktop/lsp.log') | let g:asyncomplete_log_file = expand('~/asyncomplete.log')
 
 let g:lsp_auto_enable                      = 1
