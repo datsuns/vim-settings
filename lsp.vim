@@ -78,7 +78,6 @@ let g:lsp_settings = extend(get(g:, 'lsp_settings', {}), {
 \   },
 \   'clangd': {
 \     'args': [
-\           '--compile-commands-dir=/dev/null',
 \           '--background-index',
 \           '--clang-tidy',
 \      ]
