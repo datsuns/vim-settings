@@ -9,8 +9,8 @@ function! s:on_lsp_buffer_enabled() abort
   nmap <buffer> gD <plug>(lsp-definition)
   nmap <buffer> gT :execute(":tab LspDefinition")<CR>
   nmap <buffer> gr <plug>(lsp-references)
-  nmap <buffer> gi <plug>(lsp-implementation))
-  nmap <buffer> gt <plug>(lsp-type-definition))
+  nmap <buffer> gi <plug>(lsp-implementation)
+  nmap <buffer> gt <plug>(lsp-type-definition)
   nmap <buffer> gl :LspDocumentDiagnostics<CR>
   nmap <buffer> <f2> <plug>(lsp-rename)
   inoremap <expr> <cr> pumvisible() ? "\<c-y>\<cr>" : "\<cr>"
@@ -78,7 +78,6 @@ let g:lsp_settings = extend(get(g:, 'lsp_settings', {}), {
 \   },
 \   'clangd': {
 \     'args': [
-\           '--compile-commands-dir=/dev/null',
 \           '--background-index',
 \           '--clang-tidy',
 \      ]
