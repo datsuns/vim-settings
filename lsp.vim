@@ -101,4 +101,17 @@ let g:lsp_settings = extend(get(g:, 'lsp_settings', {}), {
 \       )
 \     )},
 \   },
+\   'rust-analyzer': {
+\     'initialization_options': {
+\       'checkOnSave': {
+\         'command': 'clippy',
+\       },
+\       'inlayHints': {
+\         'typeHints': { 'enable': v:true },
+\         'parameterHints': { 'enable': v:true },
+\       },
+\     }
+\   },
 \})
+
+let g:lsp_inlay_hints_enabled = 1

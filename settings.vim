@@ -139,7 +139,7 @@ let g:dartfmt_options = ['--line-length 120']
 "}}}
 
 "{{{ rust
-let g:rustfmt_autosave = 1
+let g:rustfmt_autosave = 0
 let g:rust_fold = 1
 "}}}
 
