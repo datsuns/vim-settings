@@ -77,10 +77,27 @@ let g:lsp_settings = extend(get(g:, 'lsp_settings', {}), {
 \      ]
 \   },
 \   'clangd': {
+\     'initialization_options': {
+\       'clangd.inlayHints.parameterNames.enable': v:true,
+\       'clangd.inlayHints.deducedTypes.enable': v:true,
+\     },
 \     'args': [
 \           '--background-index',
 \           '--clang-tidy',
 \      ]
+\   },
+\   'gopls': {
+\     'initialization_options': {
+\       'hints': {
+\         'assignVariableTypes': v:true,
+\         'compositeLiteralFields': v:true,
+\         'compositeLiteralTypes': v:true,
+\         'constantValues': v:true,
+\         'functionTypeParameters': v:true,
+\         'parameterNames': v:true,
+\         'rangeVariableTypes': v:true,
+\       },
+\     }
 \   },
 \   'pylsp-all': {
 \     'workspace_config': {
