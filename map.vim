@@ -155,3 +155,11 @@ function! s:pseudo_function_to_trigger_copilot()
 endfunction
 nnoremap <silent> <Space>cp  :call <SID>pseudo_function_to_trigger_copilot()<CR>
 "}}}
+
+"{{{ Rust
+augroup rust_maps
+  autocmd!
+  autocmd FileType rust nnoremap <buffer> <Space>ct :RustTest<cr>
+  autocmd FileType rust nnoremap <buffer> <Space>cr :RustRun<cr>
+augroup END
+"}}}

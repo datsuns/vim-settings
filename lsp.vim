@@ -120,7 +120,8 @@ let g:lsp_settings = extend(get(g:, 'lsp_settings', {}), {
 \   },
 \   'rust-analyzer': {
 \     'initialization_options': {
-\       'checkOnSave': {
+\       'checkOnSave': v:true,
+\       'check': {
 \         'command': 'clippy',
 \       },
 \       'inlayHints': {
@@ -130,5 +131,6 @@ let g:lsp_settings = extend(get(g:, 'lsp_settings', {}), {
 \     }
 \   },
 \})
+let g:lsp_settings_filetype_rust = ['rust-analyzer', 'bacon-ls']
 
 let g:lsp_inlay_hints_enabled = 1
