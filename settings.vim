@@ -23,7 +23,7 @@ augroup END
 "{{{quickrun
 let g:quickrun_config = {}
 let g:quickrun_config['_'] = {
-      \ 'outputter/buffer/split': 'split',
+      \ 'outputter/buffer/opener': '%{winwidth(0) * 2 < winheight(0) * 5 ? "10split" : "50vsplit"}',
       \ 'runner' : 'job',
       \ 'outputter/buffer/into': '0'
       \}
