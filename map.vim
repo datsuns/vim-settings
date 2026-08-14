@@ -35,6 +35,8 @@ noremap <silent> <Space>co :copen<CR>
 noremap <silent> <Space>cc :cclose<CR>
 noremap <silent> <C-n> :cn<CR>
 noremap <silent> <C-p> :cp<CR>
+noremap <silent> <C-N> :lne<CR>
+noremap <silent> <C-P> :lp<CR>
 
 "{{{ ino
 "noremap <silent> <Space>ib :!ino build<CR>
